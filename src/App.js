@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
 import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
 import soundOn from './images/icon/Sound On.png';
@@ -7,6 +8,8 @@ import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <header className="Header">
@@ -43,9 +46,17 @@ function App() {
           <PickedPlayer />
         </div>
 
-        <Button text="Submit" />
+        <Button
+          text="Submit"
+          something={() => {
+            setShowModal(true);
+          }}
+        />
       </section>
-      <Modal />
+      <Modal
+        content="How many teams do you want to form?"
+        showModal={showModal}
+      />
     </>
   );
 }

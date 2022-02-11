@@ -1,19 +1,14 @@
 import Button from '../Button/Button';
 import styles from './Modal.module.css';
 
-export default function Modal() {
+export default function Modal({ content, showModal }) {
   return (
-    <div className={styles.ModalWindow}>
+    <div className={showModal ? styles.ModalWindow : styles.DisplayNone}>
       <div className={styles.Top}>
         <h2 className={styles.Title}>Teams</h2>
       </div>
       <div className={styles.Body}>
-        <p className={styles.Content}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-          reprehenderit amet illo. Fugit cumque aperiam, quibusdam amet
-          distinctio, asperiores, numquam ex voluptatem ipsum assumenda esse
-          veniam pariatur recusandae molestiae! Temporibus.
-        </p>
+        <p className={styles.Content}>{content}</p>
         <form className={styles.Options}>
           <div className={styles.Select}>
             <label className={styles.Label}>
