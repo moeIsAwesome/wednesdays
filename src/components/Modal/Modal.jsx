@@ -16,8 +16,14 @@ export default function Modal() {
         </p>
         <form className={styles.Options}>
           <div className={styles.Select}>
-            <input type="radio" name="Teams" /> 2 Teams
-            <input type="radio" name="Teams" /> 3 Teams
+            <label className={styles.Label}>
+              2 Teams
+              <input id={styles.RadioButton} type="radio" name="Teams" />
+            </label>
+            <label className={styles.Label}>
+              3 Teams
+              <input type="radio" name="Teams" />
+            </label>
           </div>
           <div className={styles.BackNext}>
             <Button text="Back" />
