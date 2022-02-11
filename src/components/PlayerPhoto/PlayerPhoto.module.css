@@ -1,0 +1,25 @@
+.PlayerBox {
+  padding-top: 9%;
+  padding-bottom: 5%;
+}
+
+.PlayerPhoto {
+  height: 13.5rem;
+  width: auto;
+  cursor: pointer;
+}
+.PlayerPhoto:hover {
+  border: 5px solid orangered;
+  opacity: 50%;
+}
+
+.PlayerPhoto:visited .blink-1 {
+  opacity: 0.6; /* Real browsers */
+  filter: alpha(opacity = 60); /* MSIE */
+}
+
+.PlayerName {
+  margin-top: 2rem;
+  text-align: center;
+  align-content: center;
+}

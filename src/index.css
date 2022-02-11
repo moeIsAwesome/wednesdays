@@ -1,13 +1,56 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+.Header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 13vh;
+  border-bottom: 7px solid #eee;
+}
+
+.Title {
+  margin: auto;
+}
+
+.SoundLogo {
+  width: 80px;
+}
+
+.SelectPlayers {
+  display: flex;
+  height: 55vh;
+  border-bottom: 7px solid #eee;
+}
+
+.PlayersContainer {
+  display: grid;
+  margin-left: 20rem;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  width: 50vw;
+  height: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.PickedPlayersContainer {
+  display: flex;
+  justify-content: center;
 }

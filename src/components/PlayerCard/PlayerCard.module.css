@@ -1,0 +1,39 @@
+.PlayerCard {
+  width: 12vw;
+  height: 40vh;
+  margin-left: 15rem;
+  margin-top: 2rem;
+  margin-bottom: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: #555;
+}
+.PlayerPhoto {
+  width: 15rem;
+  padding: 2rem 0 2rem 0;
+}
+
+.PlayerName {
+  font-size: 1.3rem;
+}
+
+.SkillBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.SkillName {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  padding: 1rem;
+}
+
+.SkillValue {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
