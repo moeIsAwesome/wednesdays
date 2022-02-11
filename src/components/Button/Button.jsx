@@ -1,5 +1,5 @@
 import styles from './Button.module.css';
 
-export default function Button() {
-  return <button className={styles.Button}>Submit</button>;
+export default function Button({ text }) {
+  return <button className={styles.Button}>{text}</button>;
 }

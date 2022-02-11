@@ -4,10 +4,11 @@ import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
 import soundOn from './images/icon/Sound On.png';
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
+import Modal from './components/Modal/Modal';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <header className="Header">
         <img className="SoundLogo" src={soundOn} alt="soundLogo" />
         <h1 className="Title">
@@ -33,6 +34,7 @@ function App() {
           <PlayerPhoto />
         </div>
       </section>
+
       <section className="PickedPlayers">
         <div className="PickedPlayersContainer">
           <PickedPlayer />
@@ -41,9 +43,10 @@ function App() {
           <PickedPlayer />
         </div>
 
-        <Button />
+        <Button text="Submit" />
       </section>
-    </div>
+      <Modal />
+    </>
   );
 }
 
