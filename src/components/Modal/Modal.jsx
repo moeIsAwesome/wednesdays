@@ -17,12 +17,12 @@ export default function Modal() {
         <form className={styles.Options}>
           <div className={styles.Select}>
             <label className={styles.Label}>
-              2 Teams
-              <input id={styles.RadioButton} type="radio" name="Teams" />
+              <input id="two" type="radio" name="Teams" />
+              <span>►</span>2 Teams
             </label>
             <label className={styles.Label}>
-              3 Teams
-              <input type="radio" name="Teams" />
+              <input id="three" type="radio" name="Teams" />
+              <span>►</span>3 Teams
             </label>
           </div>
           <div className={styles.BackNext}>
