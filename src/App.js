@@ -8,7 +8,8 @@ import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
+  const [showTeamsModal, setShowTeamsModal] = useState(false);
+  const [showLineupModal, setShowLineupModal] = useState(false);
 
   return (
     <>
@@ -49,14 +50,30 @@ function App() {
         <Button
           text="Submit"
           something={() => {
-            setShowModal(true);
+            setShowTeamsModal(true);
           }}
         />
       </section>
-      <Modal
-        content="How many teams do you want to form?"
-        showModal={showModal}
-      />
+      {showTeamsModal && (
+        <Modal
+          title="Teams"
+          content="How many teams do you want to form?"
+          op1="2Teams"
+          op2="3Teams"
+          setShowTeamsModal={setShowTeamsModal}
+          setShowLineupModal={setShowLineupModal}
+        />
+      )}
+
+      {showLineupModal && (
+        <Modal
+          title="LineUp Mode"
+          content="Do you want fair lineups or random ones?"
+          op1="Fair"
+          op2="Random"
+          setShowLineupModal={setShowLineupModal}
+        />
+      )}
     </>
   );
 }
