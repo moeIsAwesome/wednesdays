@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wednesdays/static/css/main.f507525e.css",
-    "main.js": "/wednesdays/static/js/main.bbb4967f.js",
+    "main.js": "/wednesdays/static/js/main.62a05c84.js",
     "static/media/farahani.png": "/wednesdays/static/media/farahani.bf87913a4b72edb432c0.png",
     "index.html": "/wednesdays/index.html",
     "main.f507525e.css.map": "/wednesdays/static/css/main.f507525e.css.map",
-    "main.bbb4967f.js.map": "/wednesdays/static/js/main.bbb4967f.js.map"
+    "main.62a05c84.js.map": "/wednesdays/static/js/main.62a05c84.js.map"
   },
   "entrypoints": [
     "static/css/main.f507525e.css",
-    "static/js/main.bbb4967f.js"
+    "static/js/main.62a05c84.js"
   ]
 }
