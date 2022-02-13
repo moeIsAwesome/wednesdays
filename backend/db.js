@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // NOTE Connecting to Database
-const url =
-  'mongodb+srv://moeIsAwesome:aA13711371@moeisawesome.tdrzi.mongodb.net/wednesdays?retryWrites=true&w=majority';
+const url = process.env.URL;
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
 const db = mongoose.connection;
