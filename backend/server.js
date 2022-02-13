@@ -1,6 +1,6 @@
-const getAllPlayers = require('./db');
+const Player = require('./db');
+
 const express = require('express');
-const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 app.use(cors());
@@ -13,11 +13,15 @@ app.listen(port, () => {
 });
 
 // NOTE Handling GET requests:
+
 app.get('/api/v1/players', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: 'Hello from the server!',
+  Player.find({}, (err, result) => {
+    if (err) {
+      throw new err();
+    }
+
+    res.json({
+      result,
+    });
   });
 });
-
-getAllPlayers();

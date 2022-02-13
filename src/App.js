@@ -6,21 +6,27 @@ import soundOn from './images/icon/Sound On.png';
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
+const url = 'http://localhost:3050/api/v1/players';
 
 function App() {
+  const [players, setPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
-  const url = 'http://localhost:3050/api/v1/players';
 
-  const getPlayers = async () => {
-    const receivedData = await fetch(url);
-    const body = await receivedData.json();
-    console.log(body);
-  };
+  async function getPlayers() {
+    try {
+      const receivedData = await fetch(url);
+      const body = await receivedData.json();
+      setPlayers(body.result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   useEffect(() => {
     getPlayers();
   }, []);
 
+  console.log(players);
   return (
     <>
       <header className="Header">
@@ -32,20 +38,9 @@ function App() {
       <section className="SelectPlayers">
         <PlayerCard />
         <div className="PlayersContainer">
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
-          <PlayerPhoto />
+          {players.map((player) => {
+            return <PlayerPhoto key={player._id} {...player} />;
+          })}
         </div>
       </section>
 

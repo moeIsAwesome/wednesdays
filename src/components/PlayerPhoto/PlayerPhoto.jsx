@@ -1,12 +1,10 @@
 import styles from './PlayerPhoto.module.css';
 
-import Fara from '../../images/players/Farahani.png';
-
-export default function PlayerPhoto() {
+export default function PlayerPhoto({ name, img }) {
   return (
-    <div className={styles.PlayerBox}>
-      <img src={Fara} alt="Moe" className={styles.PlayerPhoto} />
-      <p className={styles.PlayerName}>Mousavi</p>
-    </div>
+    <article className={styles.PlayerBox}>
+      <img src={img} alt={name} className={styles.PlayerPhoto} />
+      <p className={styles.PlayerName}>{name}</p>
+    </article>
   );
 }

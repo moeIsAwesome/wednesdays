@@ -20,6 +20,7 @@ db.on('error', (err) => {
 
 const playerSchema = new mongoose.Schema({
   Name: { type: String },
+  img: { type: String },
   Defence: { type: Number },
   Shoot: { type: Number },
   Pass: { type: Number },
@@ -42,14 +43,4 @@ const Player = mongoose.model('players', playerSchema);
 //   Speed: 9,
 // });
 
-const getAllPlayers = async () => {
-  try {
-    const result = await Player.find({}, { Name: 1, _id: 0 });
-    const namesAsArray = result.map(({ Name }) => Name);
-    console.log(namesAsArray);
-  } catch (error) {
-    alert(error);
-  }
-};
-
-module.exports = getAllPlayers;
+module.exports = Player;
