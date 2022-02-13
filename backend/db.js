@@ -44,15 +44,12 @@ const Player = mongoose.model('players', playerSchema);
 
 const getAllPlayers = async () => {
   try {
-    const result = await Player.find({});
-    console.log(result);
+    const result = await Player.find({}, { Name: 1, _id: 0 });
+    const namesAsArray = result.map(({ Name }) => Name);
+    console.log(namesAsArray);
   } catch (error) {
     alert(error);
   }
-};
-
-const myFunc = () => {
-  console.log('hello from the other file!');
 };
 
 module.exports = getAllPlayers;
