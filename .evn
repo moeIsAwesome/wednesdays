@@ -1,1 +1,1 @@
-URL = mongodb+srv://moeIsAwesome:aA13711371@moeisawesome.tdrzi.mongodb.net/wednesdays?retryWrites=true&w=majority
+DBSTR = mongodb+srv://moeIsAwesome:aA13711371@moeisawesome.tdrzi.mongodb.net/wednesdays?retryWrites=true&w=majority
