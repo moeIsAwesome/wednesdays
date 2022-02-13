@@ -1,3 +1,4 @@
+const getAllPlayers = require('./db');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -19,13 +20,4 @@ app.get('/api/v1/players', (req, res) => {
   });
 });
 
-// app.get('/api/v1/players', (req, res) => {
-//   db.collection('wednesdays').findOne({}, (err, result) => {
-//     if (err) {
-//       throw new err();
-//     }
-//     res.json({
-//       result,
-//     });
-//   });
-// });
+getAllPlayers();

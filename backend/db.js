@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// NOTE Connecting to Database
-const url = process.env.DBSTR;
+// // NOTE Connecting to Database
+const url =
+  'mongodb+srv://moeIsAwesome:aA13711371@moeisawesome.tdrzi.mongodb.net/wednesdays?retryWrites=true&w=majority';
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
 const db = mongoose.connection;
@@ -17,18 +18,18 @@ db.on('error', (err) => {
 
 // NOTE Creating the schema of the document:
 
-// const playerSchema = new mongoose.Schema({
-//   Name: { type: String },
-//   Defence: { type: Number },
-//   Shoot: { type: Number },
-//   Pass: { type: Number },
-//   Dribble: { type: Number },
-//   Speed: { type: Number },
-// });
+const playerSchema = new mongoose.Schema({
+  Name: { type: String },
+  Defence: { type: Number },
+  Shoot: { type: Number },
+  Pass: { type: Number },
+  Dribble: { type: Number },
+  Speed: { type: Number },
+});
 
 // NOTE Create a collection:
 
-// const Player = mongoose.model('players', playerSchema);
+const Player = mongoose.model('players', playerSchema);
 
 // NOTE Adding a document (player) to collection:
 
@@ -40,3 +41,18 @@ db.on('error', (err) => {
 //   Dribble: 8,
 //   Speed: 9,
 // });
+
+const getAllPlayers = async () => {
+  try {
+    const result = await Player.find({});
+    console.log(result);
+  } catch (error) {
+    alert(error);
+  }
+};
+
+const myFunc = () => {
+  console.log('hello from the other file!');
+};
+
+module.exports = getAllPlayers;
