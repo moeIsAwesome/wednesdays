@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 app.use(cors());
@@ -17,3 +18,14 @@ app.get('/api/v1/players', (req, res) => {
     data: 'Hello from the server!',
   });
 });
+
+// app.get('/api/v1/players', (req, res) => {
+//   db.collection('wednesdays').findOne({}, (err, result) => {
+//     if (err) {
+//       throw new err();
+//     }
+//     res.json({
+//       result,
+//     });
+//   });
+// });
