@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
 import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
 import soundOn from './images/icon/Sound On.png';
@@ -10,6 +10,16 @@ import Modal from './components/Modal/Modal';
 function App() {
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
+  const url = 'http://localhost:3050/api/v1/players';
+
+  const getPlayers = async () => {
+    const receivedData = await fetch(url);
+    const body = await receivedData.json();
+    console.log(body);
+  };
+  useEffect(() => {
+    getPlayers();
+  }, []);
 
   return (
     <>
