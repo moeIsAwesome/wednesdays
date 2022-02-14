@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     getPlayers();
   }, []);
+  console.log(selectedPlayers);
 
   return (
     <>
@@ -41,11 +42,11 @@ function App() {
           {allPlayers.map((player) => {
             return (
               <PlayerPhoto
+                onClick={() => alert('heu')}
                 key={player._id}
                 {...player}
-                onClick={() => {
-                  alert(`hey you clicked on ${player.name}`);
-                }}
+                selectedPlayers={selectedPlayers}
+                setSelectedPlayers={setSelectedPlayers}
               />
             );
           })}

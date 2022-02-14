@@ -1,13 +1,23 @@
 import styles from './PlayerPhoto.module.css';
 import { useState } from 'react';
 
-export default function PlayerPhoto({ name, img }) {
+export default function PlayerPhoto({
+  name,
+  img,
+  selectedPlayers,
+  setSelectedPlayers,
+}) {
   const [selected, setSelected] = useState(false);
   return (
     <article
       className={selected ? styles.Fade : styles.PlayerBox}
       onClick={() => {
         setSelected(!selected);
+        if (selectedPlayers.includes(name)) {
+          setSelectedPlayers(selectedPlayers.filter((item) => item !== name));
+        } else {
+          setSelectedPlayers([...selectedPlayers, name]);
+        }
       }}
     >
       <img src={img} alt={name} className={styles.PlayerPhoto} />
