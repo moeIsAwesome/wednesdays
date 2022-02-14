@@ -9,24 +9,27 @@ import Modal from './components/Modal/Modal';
 const url = 'http://localhost:3050/api/v1/players';
 
 function App() {
-  const [players, setPlayers] = useState([]);
+  const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [selected, setSelected] = useState(false);
 
   async function getPlayers() {
     try {
       const receivedData = await fetch(url);
       const body = await receivedData.json();
-      setPlayers(body.result);
+      setAllPlayers(body.result);
     } catch (error) {
       console.log(error);
     }
   }
   useEffect(() => {
     getPlayers();
+    console.log(selected);
   }, []);
 
-  console.log(players);
+  console.log(allPlayers);
   return (
     <>
       <header className="Header">
@@ -38,8 +41,18 @@ function App() {
       <section className="SelectPlayers">
         <PlayerCard />
         <div className="PlayersContainer">
-          {players.map((player) => {
-            return <PlayerPhoto key={player._id} {...player} />;
+          {allPlayers.map((player) => {
+            return (
+              <PlayerPhoto
+                key={player._id}
+                {...player}
+                selected={selected}
+                something={(e) => {
+                  setSelected(!selected);
+                  console.log(selected);
+                }}
+              />
+            );
           })}
         </div>
       </section>
@@ -54,8 +67,14 @@ function App() {
 
         <Button
           text="Submit"
-          something={() => {
-            setShowTeamsModal(true);
+          something={(e) => {
+            e.preventDefault();
+            if (selectedPlayers.length < 2) {
+              alert('We need at least two players');
+            } else {
+              setSelectedPlayers([...selectedPlayers]);
+              setShowTeamsModal(true);
+            }
           }}
         />
       </section>

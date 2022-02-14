@@ -23,3 +23,8 @@
   text-align: center;
   align-content: center;
 }
+
+.Fade {
+  filter: grayscale(100%);
+  border: 10px solid black;
+}
