@@ -15,6 +15,10 @@ function App() {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [selected, setSelected] = useState(false);
 
+  const fader = (id) => {
+    setSelectedPlayers(allPlayers.filter((item) => (item._id = id)));
+  };
+
   async function getPlayers() {
     try {
       const receivedData = await fetch(url);
@@ -46,11 +50,9 @@ function App() {
               <PlayerPhoto
                 key={player._id}
                 {...player}
-                selected={selected}
-                something={(e) => {
-                  setSelected(!selected);
-                  console.log(selected);
-                }}
+                // functionalityOnClick={() =>
+                //   alert(`you clicked me ${player._id}`)
+                // }
               />
             );
           })}
@@ -67,7 +69,7 @@ function App() {
 
         <Button
           text="Submit"
-          something={(e) => {
+          functionalityOnClick={(e) => {
             e.preventDefault();
             if (selectedPlayers.length < 2) {
               alert('We need at least two players');
