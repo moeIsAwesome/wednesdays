@@ -13,11 +13,6 @@ function App() {
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
-  const [selected, setSelected] = useState(false);
-
-  const fader = (id) => {
-    setSelectedPlayers(allPlayers.filter((item) => (item._id = id)));
-  };
 
   async function getPlayers() {
     try {
@@ -30,10 +25,8 @@ function App() {
   }
   useEffect(() => {
     getPlayers();
-    console.log(selected);
   }, []);
 
-  console.log(allPlayers);
   return (
     <>
       <header className="Header">
@@ -50,9 +43,9 @@ function App() {
               <PlayerPhoto
                 key={player._id}
                 {...player}
-                // functionalityOnClick={() =>
-                //   alert(`you clicked me ${player._id}`)
-                // }
+                onClick={() => {
+                  alert(`hey you clicked on ${player.name}`);
+                }}
               />
             );
           })}

@@ -1,7 +1,7 @@
 import styles from './PlayerPhoto.module.css';
 import { useState } from 'react';
 
-export default function PlayerPhoto({ name, img, functionalityOnClick }) {
+export default function PlayerPhoto({ name, img }) {
   const [selected, setSelected] = useState(false);
   return (
     <article
