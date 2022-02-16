@@ -6,6 +6,8 @@ export default function Modal({
   content,
   op1,
   op2,
+  showLineupModal,
+  showTeamsModal,
   setShowLineupModal,
   setShowTeamsModal,
 }) {
@@ -31,17 +33,25 @@ export default function Modal({
           <div className={styles.BackNext}>
             <Button
               text="Back"
-              something={() => {
-                if (setShowLineupModal) {
+              functionalityOnClick={() => {
+                if (showTeamsModal && !showLineupModal) {
+                  setShowTeamsModal(false);
+                } else {
                   setShowLineupModal(false);
+                  setShowTeamsModal(true);
                 }
-                setShowTeamsModal(false);
               }}
             />
             <Button
               text="Next"
-              something={() => {
-                setShowLineupModal(true);
+              functionalityOnClick={() => {
+                if (showTeamsModal && !showLineupModal) {
+                  setShowTeamsModal(false);
+                  setShowLineupModal(true);
+                } else {
+                  setShowLineupModal(false);
+                  alert('next page');
+                }
               }}
             />
           </div>

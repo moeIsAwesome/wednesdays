@@ -26,7 +26,16 @@ function App() {
   useEffect(() => {
     getPlayers();
   }, []);
-  console.log(selectedPlayers);
+  console.log(`Show Teams Modal: ${showTeamsModal}`);
+  console.log(`Show Lineup Modal: ${showLineupModal}`);
+
+  const addToPlayersListAndRemoveFromPlayersList = (playerName) => {
+    if (selectedPlayers.includes(playerName)) {
+      setSelectedPlayers(selectedPlayers.filter((el) => el !== playerName));
+    } else {
+      setSelectedPlayers([...selectedPlayers, playerName]);
+    }
+  };
 
   return (
     <>
@@ -45,8 +54,9 @@ function App() {
                 onClick={() => alert('heu')}
                 key={player._id}
                 {...player}
-                selectedPlayers={selectedPlayers}
-                setSelectedPlayers={setSelectedPlayers}
+                addToPlayersListAndRemoveFromPlayersList={
+                  addToPlayersListAndRemoveFromPlayersList
+                }
               />
             );
           })}
@@ -68,7 +78,6 @@ function App() {
             if (selectedPlayers.length < 2) {
               alert('We need at least two players');
             } else {
-              setSelectedPlayers([...selectedPlayers]);
               setShowTeamsModal(true);
             }
           }}
@@ -80,6 +89,8 @@ function App() {
           content="How many teams do you want to form?"
           op1="2Teams"
           op2="3Teams"
+          showLineupModal={showLineupModal}
+          showTeamsModal={showTeamsModal}
           setShowTeamsModal={setShowTeamsModal}
           setShowLineupModal={setShowLineupModal}
         />
@@ -91,6 +102,9 @@ function App() {
           content="Do you want fair lineups or random ones?"
           op1="Fair"
           op2="Random"
+          showLineupModal={showLineupModal}
+          showTeamsModal={showTeamsModal}
+          setShowTeamsModal={setShowTeamsModal}
           setShowLineupModal={setShowLineupModal}
         />
       )}

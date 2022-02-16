@@ -4,8 +4,7 @@ import { useState } from 'react';
 export default function PlayerPhoto({
   name,
   img,
-  selectedPlayers,
-  setSelectedPlayers,
+  addToPlayersListAndRemoveFromPlayersList,
 }) {
   const [selected, setSelected] = useState(false);
   return (
@@ -13,11 +12,7 @@ export default function PlayerPhoto({
       className={selected ? styles.Fade : styles.PlayerBox}
       onClick={() => {
         setSelected(!selected);
-        if (selectedPlayers.includes(name)) {
-          setSelectedPlayers(selectedPlayers.filter((item) => item !== name));
-        } else {
-          setSelectedPlayers([...selectedPlayers, name]);
-        }
+        addToPlayersListAndRemoveFromPlayersList(name);
       }}
     >
       <img src={img} alt={name} className={styles.PlayerPhoto} />
