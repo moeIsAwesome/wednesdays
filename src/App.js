@@ -12,6 +12,7 @@ function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
+  const [playerCard, setPlayerCard] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   async function getPlayers() {
@@ -26,14 +27,41 @@ function App() {
   useEffect(() => {
     getPlayers();
   }, []);
-  console.log(`Show Teams Modal: ${showTeamsModal}`);
-  console.log(`Show Lineup Modal: ${showLineupModal}`);
 
-  const addToPlayersListAndRemoveFromPlayersList = (playerName) => {
-    if (selectedPlayers.includes(playerName)) {
-      setSelectedPlayers(selectedPlayers.filter((el) => el !== playerName));
+  console.log(selectedPlayers);
+  const playerCardHandler = (
+    name,
+    // defence,
+    // shoot,
+    // pass,
+    // dribble,
+    // speed,
+    img
+  ) => {
+    setPlayerCard({
+      name: name,
+      // defence: defence,
+      // shoot: shoot,
+      // pass: pass,
+      // dribble: dribble,
+      // speed: speed,
+      img: img,
+    });
+  };
+
+  const addToPlayersListAndRemoveFromPlayersList = (
+    _id,
+    name,
+    img,
+    lineupImg
+  ) => {
+    if (selectedPlayers.some((item) => item._id === _id)) {
+      setSelectedPlayers(selectedPlayers.filter((el) => el._id !== _id));
     } else {
-      setSelectedPlayers([...selectedPlayers, playerName]);
+      setSelectedPlayers([
+        ...selectedPlayers,
+        { _id: _id, name: name, img: img, lineupImg: lineupImg },
+      ]);
     }
   };
 
@@ -46,14 +74,20 @@ function App() {
         </h1>
       </header>
       <section className="SelectPlayers">
-        <PlayerCard />
+        <PlayerCard
+          name={playerCard.name}
+          img={playerCard.img}
+          selectedPlayers={selectedPlayers}
+        />
         <div className="PlayersContainer">
           {allPlayers.map((player) => {
             return (
               <PlayerPhoto
-                onClick={() => alert('heu')}
                 key={player._id}
                 {...player}
+                playerCardHandler={playerCardHandler}
+                selectedPlayers={selectedPlayers}
+                setSelectedPlayers={setSelectedPlayers}
                 addToPlayersListAndRemoveFromPlayersList={
                   addToPlayersListAndRemoveFromPlayersList
                 }
@@ -65,10 +99,27 @@ function App() {
 
       <section className="PickedPlayers">
         <div className="PickedPlayersContainer">
-          <PickedPlayer />
-          <PickedPlayer />
-          <PickedPlayer />
-          <PickedPlayer />
+          {selectedPlayers.length === 0 ? (
+            <div className="PickedPlayerContainer">
+              <img
+                className="PickedPlayerPhoto"
+                src="https://lh3.google.com/u/2/d/1PL2fMxf6CpHlzt7EI8sJt0NpxTiP5Acm=w1920-h937"
+                alt="Unknown"
+              />
+              <p className="PickedPlayerName">Unknown</p>
+            </div>
+          ) : (
+            selectedPlayers.map((pplayer, index) => {
+              return (
+                <PickedPlayer
+                  key={index}
+                  lineupName={pplayer.name}
+                  lineupPhoto={pplayer.lineupImg}
+                  selectedPlayers={selectedPlayers}
+                />
+              );
+            })
+          )}
         </div>
 
         <Button

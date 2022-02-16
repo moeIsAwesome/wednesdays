@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.PickedPlayerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.PickedPlayerPhoto {
+  padding-top: 2rem;
+  height: 22rem;
+  width: auto;
+}
+
+.PickedPlayerName {
+  padding: 1.1rem;
+  font-size: 1.2rem;
+}

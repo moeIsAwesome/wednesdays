@@ -1,11 +1,14 @@
 import styles from './PickedPlayer.module.css';
-import fara from '../../images/players/lineup/farahani.png';
 
-export default function PickedPlayer() {
+export default function PickedPlayer({ lineupPhoto, lineupName }) {
   return (
     <div className={styles.PickedPlayerContainer}>
-      <img className={styles.PickedPlayerPhoto} src={fara} alt="fara" />
-      <p className={styles.PickedPlayerName}>Farahani</p>
+      <img
+        className={styles.PickedPlayerPhoto}
+        src={lineupPhoto}
+        alt={lineupName}
+      />
+      <p className={styles.PickedPlayerName}>{lineupName}</p>
     </div>
   );
 }

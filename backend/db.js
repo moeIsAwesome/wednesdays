@@ -19,7 +19,7 @@ db.on('error', (err) => {
 // NOTE Creating the schema of the document:
 
 const playerSchema = new mongoose.Schema({
-  Name: { type: String },
+  name: { type: String },
   img: { type: String },
   Defence: { type: Number },
   Shoot: { type: Number },
@@ -35,7 +35,7 @@ const Player = mongoose.model('players', playerSchema);
 // NOTE Adding a document (player) to collection:
 
 // Player.create({
-//   Name: 'Moe',
+//   name: 'Moe',
 //   Defence: 6,
 //   Shoot: 8,
 //   Pass: 9,
