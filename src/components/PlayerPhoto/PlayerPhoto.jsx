@@ -6,6 +6,11 @@ export default function PlayerPhoto({
   name,
   img,
   lineupImg,
+  Defence,
+  Shoot,
+  Pass,
+  Dribble,
+  Speed,
   selectedPlayers,
   playerCardHandler,
 
@@ -17,8 +22,18 @@ export default function PlayerPhoto({
       className={selected ? styles.PlayerBox : styles.Fade}
       onClick={() => {
         setSelected(!selected);
-        addToPlayersListAndRemoveFromPlayersList(_id, name, img, lineupImg);
-        playerCardHandler(name, img);
+        addToPlayersListAndRemoveFromPlayersList(
+          _id,
+          name,
+          img,
+          lineupImg,
+          Defence,
+          Shoot,
+          Pass,
+          Dribble,
+          Speed
+        );
+        playerCardHandler(name, img, Defence, Shoot, Pass, Dribble, Speed);
       }}
     >
       <img src={img} alt={name} className={styles.PlayerPhoto} />

@@ -1,6 +1,15 @@
 import styles from './PlayerCard.module.css';
 
-export default function PlayerCard({ name, img, selectedPlayers }) {
+export default function PlayerCard({
+  name,
+  img,
+  Defence,
+  Shoot,
+  Pass,
+  Dribble,
+  Speed,
+  selectedPlayers,
+}) {
   return (
     <div className={styles.PlayerCard}>
       <img
@@ -26,11 +35,26 @@ export default function PlayerCard({ name, img, selectedPlayers }) {
         </div>
 
         <div className={styles.SkillValue}>
-          <p> █████▒▒▒▒▒</p>
-          <p> ███████▒▒▒</p>
-          <p> ████████▒</p>
-          <p> ████▒▒▒▒▒▒</p>
-          <p> █████▒▒▒▒▒</p>
+          <p>
+            {'█'.repeat(parseInt(Defence))}
+            {'▒'.repeat(parseInt(10 - Defence))}
+          </p>
+          <p>
+            {'█'.repeat(parseInt(Shoot))}
+            {'▒'.repeat(parseInt(10 - Shoot))}
+          </p>
+          <p>
+            {'█'.repeat(parseInt(Pass))}
+            {'▒'.repeat(parseInt(10 - Pass))}
+          </p>
+          <p>
+            {'█'.repeat(parseInt(Dribble))}
+            {'▒'.repeat(parseInt(10 - Dribble))}
+          </p>
+          <p>
+            {'█'.repeat(parseInt(Speed))}
+            {'▒'.repeat(parseInt(10 - Speed))}
+          </p>
         </div>
       </div>
     </div>

@@ -20,6 +20,7 @@ function App() {
       const receivedData = await fetch(url);
       const body = await receivedData.json();
       setAllPlayers(body.result);
+      console.log(body.result);
     } catch (error) {
       console.log(error);
     }
@@ -31,21 +32,21 @@ function App() {
   console.log(selectedPlayers);
   const playerCardHandler = (
     name,
-    // defence,
-    // shoot,
-    // pass,
-    // dribble,
-    // speed,
-    img
+    img,
+    Defence,
+    Shoot,
+    Pass,
+    Dribble,
+    Speed
   ) => {
     setPlayerCard({
       name: name,
-      // defence: defence,
-      // shoot: shoot,
-      // pass: pass,
-      // dribble: dribble,
-      // speed: speed,
       img: img,
+      Defence: Defence,
+      Shoot: Shoot,
+      Pass: Pass,
+      Dribble: Dribble,
+      Speed: Speed,
     });
   };
 
@@ -53,14 +54,29 @@ function App() {
     _id,
     name,
     img,
-    lineupImg
+    lineupImg,
+    Defence,
+    Shoot,
+    Pass,
+    Dribble,
+    Speed
   ) => {
     if (selectedPlayers.some((item) => item._id === _id)) {
       setSelectedPlayers(selectedPlayers.filter((el) => el._id !== _id));
     } else {
       setSelectedPlayers([
         ...selectedPlayers,
-        { _id: _id, name: name, img: img, lineupImg: lineupImg },
+        {
+          _id: _id,
+          name: name,
+          img: img,
+          lineupImg: lineupImg,
+          Defence: Defence,
+          Shoot: Shoot,
+          Pass: Pass,
+          Dribble: Dribble,
+          Speed: Speed,
+        },
       ]);
     }
   };
@@ -77,6 +93,11 @@ function App() {
         <PlayerCard
           name={playerCard.name}
           img={playerCard.img}
+          Defence={playerCard.Defence}
+          Shoot={playerCard.Shoot}
+          Pass={playerCard.Pass}
+          Dribble={playerCard.Dribble}
+          Speed={playerCard.Speed}
           selectedPlayers={selectedPlayers}
         />
         <div className="PlayersContainer">
