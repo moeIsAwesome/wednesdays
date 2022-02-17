@@ -12,7 +12,6 @@ function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
-  const [playerCard, setPlayerCard] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   async function getPlayers() {
@@ -30,25 +29,6 @@ function App() {
   }, []);
 
   console.log(selectedPlayers);
-  const playerCardHandler = (
-    name,
-    img,
-    Defence,
-    Shoot,
-    Pass,
-    Dribble,
-    Speed
-  ) => {
-    setPlayerCard({
-      name: name,
-      img: img,
-      Defence: Defence,
-      Shoot: Shoot,
-      Pass: Pass,
-      Dribble: Dribble,
-      Speed: Speed,
-    });
-  };
 
   const addToPlayersListAndRemoveFromPlayersList = (
     _id,
@@ -90,23 +70,13 @@ function App() {
         </h1>
       </header>
       <section className="SelectPlayers">
-        <PlayerCard
-          name={playerCard.name}
-          img={playerCard.img}
-          Defence={playerCard.Defence}
-          Shoot={playerCard.Shoot}
-          Pass={playerCard.Pass}
-          Dribble={playerCard.Dribble}
-          Speed={playerCard.Speed}
-          selectedPlayers={selectedPlayers}
-        />
+        <PlayerCard selectedPlayers={selectedPlayers} />
         <div className="PlayersContainer">
           {allPlayers.map((player) => {
             return (
               <PlayerPhoto
                 key={player._id}
                 {...player}
-                playerCardHandler={playerCardHandler}
                 selectedPlayers={selectedPlayers}
                 setSelectedPlayers={setSelectedPlayers}
                 addToPlayersListAndRemoveFromPlayersList={
@@ -130,12 +100,12 @@ function App() {
               <p className="PickedPlayerName">Unknown</p>
             </div>
           ) : (
-            selectedPlayers.map((pplayer, index) => {
+            selectedPlayers.map((player, index) => {
               return (
                 <PickedPlayer
                   key={index}
-                  lineupName={pplayer.name}
-                  lineupPhoto={pplayer.lineupImg}
+                  lineupName={player.name}
+                  lineupPhoto={player.lineupImg}
                   selectedPlayers={selectedPlayers}
                 />
               );

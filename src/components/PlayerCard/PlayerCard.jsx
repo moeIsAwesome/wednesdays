@@ -17,12 +17,14 @@ export default function PlayerCard({
         src={
           selectedPlayers.length === 0
             ? 'https://lh3.google.com/u/2/d/1TEsj5DAaA3X9IxoKzda5ecehKfOUXYrn=w2625-h1656-iv1'
-            : img
+            : selectedPlayers.at(-1).img
         }
-        alt={selectedPlayers.length === 0 ? 'unknown' : name}
+        alt={
+          selectedPlayers.length === 0 ? 'unknown' : selectedPlayers.at(-1).name
+        }
       />
       <p className={styles.PlayerName}>
-        {selectedPlayers.length === 0 ? 'unknown' : name}
+        {selectedPlayers.length === 0 ? 'unknown' : selectedPlayers.at(-1).name}
       </p>
 
       <div className={styles.SkillBox}>
@@ -36,24 +38,43 @@ export default function PlayerCard({
 
         <div className={styles.SkillValue}>
           <p>
-            {'█'.repeat(parseInt(Defence))}
-            {'▒'.repeat(parseInt(10 - Defence))}
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Defence)
+                )}${'▒'.repeat(
+                  parseInt(10 - selectedPlayers.at(-1).Defence)
+                )} `}
           </p>
           <p>
-            {'█'.repeat(parseInt(Shoot))}
-            {'▒'.repeat(parseInt(10 - Shoot))}
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Shoot)
+                )}${'▒'.repeat(parseInt(10 - selectedPlayers.at(-1).Shoot))} `}
           </p>
           <p>
-            {'█'.repeat(parseInt(Pass))}
-            {'▒'.repeat(parseInt(10 - Pass))}
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Pass)
+                )}${'▒'.repeat(parseInt(10 - selectedPlayers.at(-1).Pass))} `}
           </p>
           <p>
-            {'█'.repeat(parseInt(Dribble))}
-            {'▒'.repeat(parseInt(10 - Dribble))}
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Dribble)
+                )}${'▒'.repeat(
+                  parseInt(10 - selectedPlayers.at(-1).Dribble)
+                )} `}
           </p>
           <p>
-            {'█'.repeat(parseInt(Speed))}
-            {'▒'.repeat(parseInt(10 - Speed))}
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Speed)
+                )}${'▒'.repeat(parseInt(10 - selectedPlayers.at(-1).Speed))} `}
           </p>
         </div>
       </div>

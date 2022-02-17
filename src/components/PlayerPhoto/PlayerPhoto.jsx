@@ -11,9 +11,6 @@ export default function PlayerPhoto({
   Pass,
   Dribble,
   Speed,
-  selectedPlayers,
-  playerCardHandler,
-
   addToPlayersListAndRemoveFromPlayersList,
 }) {
   const [selected, setSelected] = useState(true);
@@ -33,7 +30,6 @@ export default function PlayerPhoto({
           Dribble,
           Speed
         );
-        playerCardHandler(name, img, Defence, Shoot, Pass, Dribble, Speed);
       }}
     >
       <img src={img} alt={name} className={styles.PlayerPhoto} />
