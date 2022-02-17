@@ -6,10 +6,17 @@ export default function Modal({
   content,
   op1,
   op2,
+  groupName,
+  radioId1,
+  radioId2,
   showLineupModal,
   showTeamsModal,
   setShowLineupModal,
   setShowTeamsModal,
+  radioOnChangeHandler,
+  checkedValue1,
+  checkedValue2,
+  selectedPlayers,
 }) {
   return (
     <div className={styles.ModalWindow}>
@@ -21,12 +28,24 @@ export default function Modal({
         <form className={styles.Options}>
           <div className={styles.Select}>
             <label className={styles.Label}>
-              <input id="two" type="radio" name="Teams" defaultChecked />
+              <input
+                id={radioId1}
+                type="radio"
+                name={groupName}
+                checked={checkedValue1}
+                onChange={radioOnChangeHandler}
+              />
               <span className={styles.BlinkAnimation}>►</span>
               {op1}
             </label>
             <label className={styles.Label}>
-              <input id="three" type="radio" name="Teams" />
+              <input
+                id={radioId2}
+                type="radio"
+                name={groupName}
+                checked={checkedValue2}
+                onChange={radioOnChangeHandler}
+              />
               <span className={styles.BlinkAnimation}>►</span> {op2}
             </label>
           </div>
@@ -50,7 +69,7 @@ export default function Modal({
                   setShowLineupModal(true);
                 } else {
                   setShowLineupModal(false);
-                  alert('next page');
+                  // MAINLOGIC
                 }
               }}
             />

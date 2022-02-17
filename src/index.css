@@ -85,3 +85,11 @@ label > span {
 #three:checked + span {
   display: inline-block;
 }
+
+#fair:checked + span {
+  display: inline-block;
+}
+
+#random:checked + span {
+  display: inline-block;
+}

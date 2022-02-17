@@ -39,7 +39,8 @@ function App() {
     Shoot,
     Pass,
     Dribble,
-    Speed
+    Speed,
+    Overall
   ) => {
     if (selectedPlayers.some((item) => item._id === _id)) {
       setSelectedPlayers(selectedPlayers.filter((el) => el._id !== _id));
@@ -56,10 +57,24 @@ function App() {
           Pass: Pass,
           Dribble: Dribble,
           Speed: Speed,
+          Overall: Math.ceil((Defence + Shoot + Pass + Dribble + Speed) / 5),
         },
       ]);
     }
   };
+
+  const [teamsNum, setTeamsNum] = useState('two');
+  const [fairOrRand, setFairOrRand] = useState('fair');
+
+  const radioTeamsOnChangeHandler = (e) => {
+    setTeamsNum(e.target.id);
+  };
+
+  const radioFairsOnChangeHandler = (e) => {
+    setFairOrRand(e.target.id);
+  };
+  console.log(teamsNum);
+  console.log(fairOrRand);
 
   return (
     <>
@@ -133,6 +148,14 @@ function App() {
           content="How many teams do you want to form?"
           op1="2Teams"
           op2="3Teams"
+          groupName="Teams"
+          radioId1="two"
+          radioId2="three"
+          checkedValue1={teamsNum === 'two'}
+          checkedValue2={teamsNum === 'three'}
+          teamsNum={teamsNum}
+          setTeamsNum={setTeamsNum}
+          radioOnChangeHandler={radioTeamsOnChangeHandler}
           showLineupModal={showLineupModal}
           showTeamsModal={showTeamsModal}
           setShowTeamsModal={setShowTeamsModal}
@@ -146,10 +169,18 @@ function App() {
           content="Do you want fair lineups or random ones?"
           op1="Fair"
           op2="Random"
+          groupName="fairOrRand"
+          radioId1="fair"
+          radioId2="random"
+          checkedValue1={fairOrRand === 'fair'}
+          checkedValue2={fairOrRand === 'random'}
+          setFairOrRand={setFairOrRand}
           showLineupModal={showLineupModal}
+          radioOnChangeHandler={radioFairsOnChangeHandler}
           showTeamsModal={showTeamsModal}
           setShowTeamsModal={setShowTeamsModal}
           setShowLineupModal={setShowLineupModal}
+          selectedPlayers={selectedPlayers}
         />
       )}
     </>

@@ -1,15 +1,6 @@
 import styles from './PlayerCard.module.css';
 
-export default function PlayerCard({
-  name,
-  img,
-  Defence,
-  Shoot,
-  Pass,
-  Dribble,
-  Speed,
-  selectedPlayers,
-}) {
+export default function PlayerCard({ selectedPlayers }) {
   return (
     <div className={styles.PlayerCard}>
       <img
@@ -34,6 +25,9 @@ export default function PlayerCard({
           <p>Pass:</p>
           <p>Dribble:</p>
           <p>Speed:</p>
+          <p>
+            <strong>Overall:</strong>
+          </p>
         </div>
 
         <div className={styles.SkillValue}>
@@ -75,6 +69,16 @@ export default function PlayerCard({
               : `${'█'.repeat(
                   parseInt(selectedPlayers.at(-1).Speed)
                 )}${'▒'.repeat(parseInt(10 - selectedPlayers.at(-1).Speed))} `}
+          </p>
+
+          <p>
+            {selectedPlayers.length === 0
+              ? 0
+              : `${'█'.repeat(
+                  parseInt(selectedPlayers.at(-1).Overall)
+                )}${'▒'.repeat(
+                  parseInt(10 - selectedPlayers.at(-1).Overall)
+                )} `}
           </p>
         </div>
       </div>
