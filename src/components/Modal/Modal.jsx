@@ -69,7 +69,10 @@ export default function Modal({
                   setShowLineupModal(true);
                 } else {
                   setShowLineupModal(false);
-                  // MAINLOGIC
+                  const sorted = selectedPlayers.sort((a, b) =>
+                    a.Overall < b.Overall ? 1 : b.Overall < a.Overall ? -1 : 0
+                  );
+                  console.log(sorted);
                 }
               }}
             />
