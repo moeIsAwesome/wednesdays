@@ -89,6 +89,8 @@ function App() {
       </section>
 
       <section className="PickedPlayers">
+        <p className="NrPlayers">Number of players: {selectedPlayers.length}</p>
+
         <div className="PickedPlayersContainer">
           {selectedPlayers.length === 0 ? (
             <div className="PickedPlayerContainer">
