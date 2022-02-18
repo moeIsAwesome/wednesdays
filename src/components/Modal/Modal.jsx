@@ -1,7 +1,8 @@
 import Button from '../Button/Button';
 import styles from './Modal.module.css';
 
-import { shuffle } from '../../myFunc';
+import { shuffle } from '../../myFunctions/shuffle';
+import { chunker, getSum } from '../../myFunctions/twoFairTeams';
 import { useNavigate } from 'react-router-dom';
 
 export default function Modal({
@@ -84,35 +85,108 @@ export default function Modal({
                     const sorted = selectedPlayers.sort((a, b) =>
                       a.Overall < b.Overall ? 1 : b.Overall < a.Overall ? -1 : 0
                     );
+
+                    const sortedPlayers = [...sorted];
                     console.log('Two and Fair');
                     console.log('SortedPlayers:');
                     console.log(sorted);
+
+                    const chunked = chunker(sortedPlayers, 2);
+                    let arrays = {
+                      arr1: [],
+                      arr2: [],
+                    };
+
+                    chunked.forEach((chunker) => {
+                      let a = [];
+                      Object.keys(arrays).forEach((arr) => {
+                        a.push({ name: arr, value: getSum(arrays[arr]) });
+                      });
+                      a.sort((a, b) => {
+                        return a.value - b.value;
+                      });
+                      for (let i = 0; i < a.length; i++) {
+                        if (chunker[i]) {
+                          arrays[a[i].name].push(chunker[i]);
+                        }
+                      }
+                    });
+                    console.log('The most fair teams:');
+                    console.log(arrays);
+                    Object.keys(arrays).forEach((key) => {
+                      console.log(getSum(arrays[key]));
+                    });
                   } else if (teamsNum === 'two' && fairOrRand === 'random') {
                     navigate('twoteams', { replace: true });
 
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
+                    const arr1 = shuffledPlayers.splice(
+                      0,
+                      Math.ceil(shuffledPlayers.length / 2)
+                    );
+                    const arr2 = shuffledPlayers;
                     console.log('TWo and Random');
-                    console.log('ShuffledPlayers:');
-                    console.log(shuffledPlayers);
-                    //If I used const players = selectedplayers or directly changed the selectedplayers ui would be a mess since the picked players look at the order of the selecdeplayers to map, so by using spread operator i created a shallow copy of selected players
+                    console.log('Shuffled Team 1:');
+                    console.log(arr1);
+                    console.log('Shuffled Team 2:');
+                    console.log(arr2);
                   } else if (teamsNum === 'three' && fairOrRand === 'fair') {
                     navigate('3fair', { replace: true });
                     const sorted = selectedPlayers.sort((a, b) =>
                       a.Overall < b.Overall ? 1 : b.Overall < a.Overall ? -1 : 0
                     );
-
                     console.log('Three and Fair');
-                    console.log('SortedPlayers:');
+                    console.log('Random Teams:');
                     console.log(sorted);
+                    const sortedPlayers = [...sorted];
+
+                    const chunked = chunker(sortedPlayers, 3);
+                    let arrays = {
+                      arr1: [],
+                      arr2: [],
+                      arr3: [],
+                    };
+
+                    chunked.forEach((chunker) => {
+                      let a = [];
+                      Object.keys(arrays).forEach((arr) => {
+                        a.push({ name: arr, value: getSum(arrays[arr]) });
+                      });
+                      a.sort((a, b) => {
+                        return a.value - b.value;
+                      });
+                      for (let i = 0; i < a.length; i++) {
+                        if (chunker[i]) {
+                          arrays[a[i].name].push(chunker[i]);
+                        }
+                      }
+                    });
+                    console.log('The most fair teams:');
+                    console.log(arrays);
+                    Object.keys(arrays).forEach((key) => {
+                      console.log(getSum(arrays[key]));
+                    });
                   } else {
                     navigate('threeteams', { replace: true });
 
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
                     console.log('Three and Random');
-                    console.log('ShuffledPlayers:');
-                    console.log(shuffledPlayers);
+                    const arr1 = shuffledPlayers.splice(
+                      0,
+                      Math.ceil(shuffledPlayers.length / 3)
+                    );
+
+                    const arr2 = shuffledPlayers.splice(
+                      0,
+                      Math.ceil(shuffledPlayers.length / 2)
+                    );
+                    const arr3 = shuffledPlayers;
+                    console.log('Shuffled Team 1:');
+                    console.log(arr1);
+                    console.log(arr2);
+                    console.log(arr3);
                   }
                 }
               }}
