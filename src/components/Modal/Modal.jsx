@@ -79,6 +79,8 @@ export default function Modal({
                   navigate('twoteams', { replace: true });
 
                   if (teamsNum === 'two' && fairOrRand === 'fair') {
+                    navigate('2fair', { replace: true });
+
                     const sorted = selectedPlayers.sort((a, b) =>
                       a.Overall < b.Overall ? 1 : b.Overall < a.Overall ? -1 : 0
                     );
@@ -95,9 +97,11 @@ export default function Modal({
                     console.log(shuffledPlayers);
                     //If I used const players = selectedplayers or directly changed the selectedplayers ui would be a mess since the picked players look at the order of the selecdeplayers to map, so by using spread operator i created a shallow copy of selected players
                   } else if (teamsNum === 'three' && fairOrRand === 'fair') {
+                    navigate('3fair', { replace: true });
                     const sorted = selectedPlayers.sort((a, b) =>
                       a.Overall < b.Overall ? 1 : b.Overall < a.Overall ? -1 : 0
                     );
+
                     console.log('Three and Fair');
                     console.log('SortedPlayers:');
                     console.log(sorted);
