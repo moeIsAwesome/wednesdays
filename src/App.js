@@ -19,7 +19,6 @@ function App() {
       const receivedData = await fetch(url);
       const body = await receivedData.json();
       setAllPlayers(body.result);
-      console.log(body.result);
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +27,8 @@ function App() {
     getPlayers();
   }, []);
 
-  console.log(selectedPlayers);
+  // console.log('selected players');
+  // console.log(selectedPlayers);
 
   const addToPlayersListAndRemoveFromPlayersList = (
     _id,
@@ -73,8 +73,6 @@ function App() {
   const radioFairsOnChangeHandler = (e) => {
     setFairOrRand(e.target.id);
   };
-  console.log(teamsNum);
-  console.log(fairOrRand);
 
   return (
     <>
@@ -181,6 +179,8 @@ function App() {
           setShowTeamsModal={setShowTeamsModal}
           setShowLineupModal={setShowLineupModal}
           selectedPlayers={selectedPlayers}
+          teamsNum={teamsNum}
+          fairOrRand={fairOrRand}
         />
       )}
     </>
