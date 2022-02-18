@@ -2,6 +2,7 @@ import Button from '../Button/Button';
 import styles from './Modal.module.css';
 
 import { shuffle } from '../../myFunc';
+import { useNavigate } from 'react-router-dom';
 
 export default function Modal({
   title,
@@ -22,6 +23,8 @@ export default function Modal({
   teamsNum,
   fairOrRand,
 }) {
+  let navigate = useNavigate();
+
   return (
     <div className={styles.ModalWindow}>
       <div className={styles.Top}>
@@ -73,6 +76,7 @@ export default function Modal({
                   setShowLineupModal(true);
                 } else {
                   setShowLineupModal(false);
+                  navigate('result', { replace: true });
 
                   if (teamsNum === 'two' && fairOrRand === 'fair') {
                     const sorted = selectedPlayers.sort((a, b) =>
