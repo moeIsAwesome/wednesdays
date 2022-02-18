@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Result from './pages/Result/Result';
+import TwoTeams from './pages/TwoTeams/Index';
+import ThreeTeams from './pages/ThreeTeams/index';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -11,7 +12,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="wednesdays" element={<App />} />
-        <Route path="wednesdays/result" element={<Result />} />
+        <Route path="wednesdays/twoteams" element={<TwoTeams />} />
+        <Route path="wednesdays/threeteams" element={<ThreeTeams />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

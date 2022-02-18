@@ -1,0 +1,42 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.TeamsContainer {
+  width: 80vw;
+  height: 75vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Team {
+  width: 80%;
+  height: 33%;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.Title {
+  font-size: 1.5rem;
+}
+
+.Body {
+  display: flex;
+}
+
+.BtnContainer {
+  margin: 1rem;
+}

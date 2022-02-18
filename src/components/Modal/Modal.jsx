@@ -76,7 +76,7 @@ export default function Modal({
                   setShowLineupModal(true);
                 } else {
                   setShowLineupModal(false);
-                  navigate('result', { replace: true });
+                  navigate('twoteams', { replace: true });
 
                   if (teamsNum === 'two' && fairOrRand === 'fair') {
                     const sorted = selectedPlayers.sort((a, b) =>
@@ -86,6 +86,8 @@ export default function Modal({
                     console.log('SortedPlayers:');
                     console.log(sorted);
                   } else if (teamsNum === 'two' && fairOrRand === 'random') {
+                    navigate('twoteams', { replace: true });
+
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
                     console.log('TWo and Random');
@@ -100,6 +102,8 @@ export default function Modal({
                     console.log('SortedPlayers:');
                     console.log(sorted);
                   } else {
+                    navigate('threeteams', { replace: true });
+
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
                     console.log('Three and Random');
