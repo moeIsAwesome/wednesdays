@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import TwoTeams from './pages/TwoTeams/Index';
 import ThreeTeams from './pages/ThreeTeams/index';
+import Error from './pages/Error/index';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="wednesdays" element={<App />} />
         <Route path="wednesdays/twoteams" element={<TwoTeams />} />
         <Route path="wednesdays/threeteams" element={<ThreeTeams />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
