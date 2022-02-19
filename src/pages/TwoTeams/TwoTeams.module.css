@@ -40,3 +40,23 @@
 .BtnContainer {
   margin: 1rem;
 }
+
+.SkillBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.SkillName {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  padding: 1rem;
+}
+
+.SkillValue {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}

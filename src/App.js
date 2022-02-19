@@ -6,13 +6,15 @@ import soundOn from './images/icon/Sound On.png';
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
+import { useGlobalContext } from './context';
 const url = 'http://localhost:3050/api/v1/players';
 
 function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
-  const [selectedPlayers, setSelectedPlayers] = useState([]);
+
+  const { selectedPlayers, setSelectedPlayers } = useGlobalContext();
 
   async function getPlayers() {
     try {

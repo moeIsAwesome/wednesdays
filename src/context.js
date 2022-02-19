@@ -1,9 +1,17 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
-  return <AppContext.Provider>{children}</AppContext.Provider>;
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [randomFlag, setRandomFlag] = useState(false);
+  return (
+    <AppContext.Provider
+      value={{ selectedPlayers, setSelectedPlayers, randomFlag, setRandomFlag }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useGlobalContext = () => {

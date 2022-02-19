@@ -4,7 +4,14 @@ import styles from './Modal.module.css';
 import { shuffle } from '../../myFunctions/shuffle';
 import { chunker, getSum } from '../../myFunctions/twoFairTeams';
 import { useNavigate } from 'react-router-dom';
-export const teamRandom = {
+import { useGlobalContext } from '../../context';
+
+export const twoTeamsRandom = {
+  Team1: [],
+  Team2: [],
+};
+
+export const threeTeamsRandom = {
   Team1: [],
   Team2: [],
   Team3: [],
@@ -41,6 +48,7 @@ export default function Modal({
   fairOrRand,
 }) {
   let navigate = useNavigate();
+  let { setRandomFlag, randomFlag } = useGlobalContext();
 
   return (
     <div className={styles.ModalWindow}>
@@ -129,19 +137,21 @@ export default function Modal({
                     });
                   } else if (teamsNum === 'two' && fairOrRand === 'random') {
                     navigate('twoteams', { replace: true });
+                    setRandomFlag(true);
+                    console.log(randomFlag);
 
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
-                    teamRandom.Team1 = shuffledPlayers.splice(
+                    twoTeamsRandom.Team1 = shuffledPlayers.splice(
                       0,
                       Math.ceil(shuffledPlayers.length / 2)
                     );
-                    teamRandom.Team2 = shuffledPlayers;
+                    twoTeamsRandom.Team2 = shuffledPlayers;
                     console.log('TWo and Random');
                     console.log('Shuffled Team 1:');
-                    console.log(teamRandom.Team1);
+                    console.log(twoTeamsRandom.Team1);
                     console.log('Shuffled Team 2:');
-                    console.log(teamRandom.Team2);
+                    console.log(twoTeamsRandom.Team2);
                   } else if (teamsNum === 'three' && fairOrRand === 'fair') {
                     navigate('threeTeams', { replace: true });
                     const sorted = selectedPlayers.sort((a, b) =>
@@ -178,24 +188,25 @@ export default function Modal({
                     });
                   } else {
                     navigate('threeteams', { replace: true });
+                    setRandomFlag(true);
 
                     const players = [...selectedPlayers];
                     const shuffledPlayers = shuffle(players);
                     console.log('Three and Random');
-                    teamRandom.Team1 = shuffledPlayers.splice(
+                    threeTeamsRandom.Team1 = shuffledPlayers.splice(
                       0,
                       Math.ceil(shuffledPlayers.length / 3)
                     );
 
-                    teamRandom.Team2 = shuffledPlayers.splice(
+                    threeTeamsRandom.Team2 = shuffledPlayers.splice(
                       0,
                       Math.ceil(shuffledPlayers.length / 2)
                     );
-                    teamRandom.Team3 = shuffledPlayers;
+                    threeTeamsRandom.Team3 = shuffledPlayers;
                     console.log('Shuffled Team 1:');
-                    console.log(teamRandom.Team1);
-                    console.log(teamRandom.Team2);
-                    console.log(teamRandom.Taem3);
+                    console.log(threeTeamsRandom.Team1);
+                    console.log(threeTeamsRandom.Team2);
+                    console.log(threeTeamsRandom.Team3);
                   }
                 }
               }}
