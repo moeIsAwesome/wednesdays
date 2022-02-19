@@ -1,12 +1,15 @@
 import './App.css';
+import styles from './components/PickedPlayer/PickedPlayer.module.css';
 import { useEffect, useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
 import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
 import soundOn from './images/icon/Sound On.png';
+import soundOff from './images/icon/Sound Off.png';
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import { useGlobalContext } from './context';
+
 const url = 'http://localhost:3050/api/v1/players';
 
 function App() {
@@ -14,7 +17,14 @@ function App() {
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
 
-  const { selectedPlayers, setSelectedPlayers } = useGlobalContext();
+  const {
+    selectedPlayers,
+    setSelectedPlayers,
+    musicIsPlaying,
+    setMusicIsPlaying,
+    play,
+    pause,
+  } = useGlobalContext();
 
   async function getPlayers() {
     try {
@@ -29,9 +39,6 @@ function App() {
     getPlayers();
   }, []);
 
-  // console.log('selected players');
-  // console.log(selectedPlayers);
-
   const addToPlayersListAndRemoveFromPlayersList = (
     _id,
     name,
@@ -41,8 +48,7 @@ function App() {
     Shoot,
     Pass,
     Dribble,
-    Speed,
-    Overall
+    Speed
   ) => {
     if (selectedPlayers.some((item) => item._id === _id)) {
       setSelectedPlayers(selectedPlayers.filter((el) => el._id !== _id));
@@ -77,70 +83,89 @@ function App() {
   };
 
   return (
-    <>
+    <main>
       <header className="Header">
-        <img className="SoundLogo" src={soundOn} alt="soundLogo" />
+        <img
+          className="SoundLogo"
+          src={musicIsPlaying ? soundOn : soundOff}
+          alt="soundLogo"
+          onClick={() => {
+            setMusicIsPlaying(!musicIsPlaying);
+            musicIsPlaying ? pause() : play();
+          }}
+        />
+
         <h1 className="Title">
           Wednesday is a good day to start something new!
         </h1>
       </header>
-      <section className="SelectPlayers">
-        <PlayerCard selectedPlayers={selectedPlayers} />
-        <div className="PlayersContainer">
-          {allPlayers.map((player) => {
-            return (
-              <PlayerPhoto
-                key={player._id}
-                {...player}
-                selectedPlayers={selectedPlayers}
-                setSelectedPlayers={setSelectedPlayers}
-                addToPlayersListAndRemoveFromPlayersList={
-                  addToPlayersListAndRemoveFromPlayersList
-                }
-              />
-            );
-          })}
+      <section className="SectionSelectPlayers">
+        <div className="PlayerCardArea">
+          <PlayerCard selectedPlayers={selectedPlayers} />
+        </div>
+        <div className="SelectPlayersArea">
+          <div className="PlayersContainer">
+            {allPlayers.map((player) => {
+              return (
+                <PlayerPhoto
+                  key={player._id}
+                  {...player}
+                  selectedPlayers={selectedPlayers}
+                  setSelectedPlayers={setSelectedPlayers}
+                  addToPlayersListAndRemoveFromPlayersList={
+                    addToPlayersListAndRemoveFromPlayersList
+                  }
+                />
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <section className="PickedPlayers">
-        <p className="NrPlayers">Number of players: {selectedPlayers.length}</p>
-
-        <div className="PickedPlayersContainer">
-          {selectedPlayers.length === 0 ? (
-            <div className="PickedPlayerContainer">
-              <img
-                className="PickedPlayerPhoto"
-                src="https://lh3.google.com/u/2/d/1PL2fMxf6CpHlzt7EI8sJt0NpxTiP5Acm=w1920-h937"
-                alt="Unknown"
-              />
-              <p className="PickedPlayerName">Unknown</p>
-            </div>
-          ) : (
-            selectedPlayers.map((player, index) => {
-              return (
-                <PickedPlayer
-                  key={index}
-                  lineupName={player.name}
-                  lineupPhoto={player.lineupImg}
-                  selectedPlayers={selectedPlayers}
+      <section className="SectionPickedPlayers">
+        <div className="PickedPlayerContainer">
+          <div className="PickedPlayerTop">
+            <p className="NumberOfPlayers">
+              Number of players: {selectedPlayers.length}
+            </p>
+          </div>
+          <div className="PickedPlayerBody">
+            {selectedPlayers.length === 0 ? (
+              <div className={styles.Container}>
+                <img
+                  className={styles.Photo}
+                  src="https://lh3.google.com/u/2/d/1PL2fMxf6CpHlzt7EI8sJt0NpxTiP5Acm=w1920-h937"
+                  alt="Unknown"
                 />
-              );
-            })
-          )}
+                <p className={styles.Name}>Unknown</p>
+              </div>
+            ) : (
+              selectedPlayers.map((player, index) => {
+                return (
+                  <PickedPlayer
+                    key={index}
+                    lineupName={player.name}
+                    lineupPhoto={player.lineupImg}
+                    selectedPlayers={selectedPlayers}
+                  />
+                );
+              })
+            )}
+          </div>
         </div>
-
-        <Button
-          text="Submit"
-          functionalityOnClick={(e) => {
-            e.preventDefault();
-            if (selectedPlayers.length < 2) {
-              alert('We need at least two players');
-            } else {
-              setShowTeamsModal(true);
-            }
-          }}
-        />
+        <div className="PickedPlayerBottom">
+          <Button
+            text="Submit"
+            functionalityOnClick={(e) => {
+              e.preventDefault();
+              if (selectedPlayers.length < 2) {
+                alert('We need at least two players');
+              } else {
+                setShowTeamsModal(true);
+              }
+            }}
+          />
+        </div>
       </section>
       {showTeamsModal && (
         <Modal
@@ -185,7 +210,7 @@ function App() {
           fairOrRand={fairOrRand}
         />
       )}
-    </>
+    </main>
   );
 }
 

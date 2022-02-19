@@ -17,50 +17,15 @@ body {
   background-color: #222;
 }
 
-.Header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 13vh;
-  border-bottom: 7px solid #eee;
-}
+
 
 .Title {
   margin: auto;
 }
 
-.SoundLogo {
-  width: 80px;
-}
 
-.SelectPlayers {
-  display: flex;
-  height: 55vh;
-  border-bottom: 7px solid #eee;
-}
 
-.PlayersContainer {
-  display: grid;
-  margin-left: 20rem;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-  width: 50vw;
-  height: auto;
-  overflow: hidden;
-  overflow-y: scroll;
-}
 
-.PickedPlayers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.PickedPlayersContainer {
-  display: flex;
-  justify-content: center;
-}
 
 /* ANCHOR Creating Customized Radio Button */
 label input {

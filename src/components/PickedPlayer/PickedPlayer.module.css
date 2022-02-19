@@ -1,15 +1,19 @@
-.PickedPlayerContainer {
+.Container {
   display: flex;
+  height: 100%;
+  width: auto;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.PickedPlayerPhoto {
+.Photo {
   padding-top: 2rem;
   height: 22rem;
   width: auto;
 }
 
-.PickedPlayerName {
+.Name {
   padding: 1.1rem;
   font-size: 1.2rem;
 }

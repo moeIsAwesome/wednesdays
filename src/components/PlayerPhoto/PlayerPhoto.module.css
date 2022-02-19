@@ -13,7 +13,7 @@
   opacity: 50%;
 }
 
-.PlayerPhoto:visited .blink-1 {
+.PlayerPhoto:visited {
   opacity: 0.6; /* Real browsers */
   filter: alpha(opacity = 60); /* MSIE */
 }
@@ -27,4 +27,10 @@
 .Fade {
   filter: grayscale(100%);
   border: 10px solid black;
+}
+
+@media only screen and (max-width: 1370px) {
+  .PlayerPhoto {
+    height: 10.5rem;
+  }
 }

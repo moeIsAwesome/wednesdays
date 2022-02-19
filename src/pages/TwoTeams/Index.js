@@ -23,7 +23,7 @@ export default function TwoTeams() {
                   return (
                     <PickedPlayer
                       key={index}
-                      lineupPhoto={player.img}
+                      lineupPhoto={player.lineupImg}
                       lineupName={player.name}
                     />
                   );
@@ -32,7 +32,7 @@ export default function TwoTeams() {
                   return (
                     <PickedPlayer
                       key={index}
-                      lineupPhoto={player.img}
+                      lineupPhoto={player.lineupImg}
                       lineupName={player.name}
                     />
                   );
@@ -159,7 +159,7 @@ export default function TwoTeams() {
                   return (
                     <PickedPlayer
                       key={index}
-                      lineupPhoto={player.img}
+                      lineupPhoto={player.lineupImg}
                       lineupName={player.name}
                     />
                   );
@@ -168,7 +168,7 @@ export default function TwoTeams() {
                   return (
                     <PickedPlayer
                       key={index}
-                      lineupPhoto={player.img}
+                      lineupPhoto={player.lineupImg}
                       lineupName={player.name}
                     />
                   );

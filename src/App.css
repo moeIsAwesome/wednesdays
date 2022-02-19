@@ -1,59 +1,101 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  height: 12vh;
+  width: 100%;
+  border-bottom: 7px solid #eee;
+}
+.SoundLogo {
+  width: 80px;
+  cursor: pointer;
+}
+
+/* ANCHOR --------------------------------------------- */
+
+.SectionSelectPlayers {
+  display: flex;
+  height: 45vh;
+  width: 100vw;
+  overflow: hidden;
+  border-bottom: 7px solid #eee;
+}
+.SelectPlayersArea {
+  width: 80vw;
+  height: 100%;
+  margin-right: 10%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.PlayerCardArea {
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.PlayersContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  width: 70%;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* ANCHOR --------------------------------------------- */
+
+.SectionPickedPlayers {
+  display: flex;
+  height: 43vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .PickedPlayerContainer {
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.PickedPlayerPhoto {
-  padding-top: 2rem;
-  height: 22rem;
-  width: auto;
+.PickedPlayerTop {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+.NumberOfPlayers {
+  font-size: 1.5rem;
+}
+
+.PickedPlayerBody {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.PickedPlayerBottom {
+  height: 20%;
+  width: 100%;
+  text-align: center;
 }
 
 .PickedPlayerName {
-  padding: 1.1rem;
   font-size: 1.2rem;
 }
 
-.NrPlayers {
-  font-size: 1.2rem;
-  padding-top: 1rem;
+@media only screen and (max-width: 1370px) {
+  .PlayersContainer {
+    grid-template-columns: repeat(6, 1fr);
+    width: 80%;
+  }
 }
