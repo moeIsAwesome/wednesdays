@@ -3,7 +3,6 @@ export function shuffle(array) {
     randomIndex;
 
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 

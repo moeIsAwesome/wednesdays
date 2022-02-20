@@ -141,7 +141,10 @@ export default function Modal({
                     console.log(randomFlag);
 
                     const players = [...selectedPlayers];
+
                     const shuffledPlayers = shuffle(players);
+                    console.log('shuffledPlayers:');
+                    console.log(shuffledPlayers);
                     twoTeamsRandom.Team1 = shuffledPlayers.splice(
                       0,
                       Math.ceil(shuffledPlayers.length / 2)

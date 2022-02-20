@@ -122,4 +122,8 @@
     justify-content: center;
     align-items: center;
   }
+  .Title {
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
 }

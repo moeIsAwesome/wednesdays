@@ -489,7 +489,7 @@ export default function TwoTeams() {
                                     (previousValue, currrentValue) =>
                                       currrentValue.Pass + previousValue,
                                     0
-                                  ) / twoTeamsFair.Team1.length
+                                  ) / twoTeamsFair.Team2.length
                                 )
                             )} `}
                       </p>
@@ -619,7 +619,7 @@ export default function TwoTeams() {
                                     (previousValue, currrentValue) =>
                                       currrentValue.Overall + previousValue,
                                     0
-                                  ) / twoTeamsFair.Team1.length
+                                  ) / twoTeamsFair.Team2.length
                                 )
                             )} ${Math.ceil(
                               twoTeamsFair.Team2.reduce(
@@ -634,6 +634,7 @@ export default function TwoTeams() {
                 </div>
               </div>
             </article>
+
             <Button
               text="back"
               functionalityOnClick={() => {

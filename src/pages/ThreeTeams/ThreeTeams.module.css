@@ -1,16 +1,20 @@
 .App {
   height: 100vh;
   width: 100vw;
-  background-color: #555;
+  background-color: #101010;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
+.SectionTeams {
+  overflow: hidden;
+  height: 88vh;
+  width: 100vw;
+}
 .TeamsContainer {
-  width: 80vw;
-  height: 75vh;
+  width: 100%;
+  height: 100%;
   background: #000;
   display: flex;
   flex-direction: column;
@@ -19,44 +23,123 @@
 }
 
 .Team {
-  width: 80%;
-  height: 33%;
+  width: 60%;
+  height: 30%;
   background: #222;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 1rem;
+  margin: 0.3rem;
+  border-style: dotted;
+}
+
+.TeamTop {
+  height: 10%;
 }
 
 .Title {
+  padding: 2rem;
   font-size: 1.5rem;
 }
-
-.Body {
+.TeamBody {
+  height: 90%;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.BtnContainer {
+.Players {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SkillContainer {
+  border-style: double;
+  display: flex;
+  height: 95%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
   margin: 1rem;
+}
+
+.SkillBox {
+  display: flex;
+  height: 75%;
+  justify-content: center;
+  align-items: center;
+}
+.SkillName {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  padding: 1rem;
+}
+
+.SkillValue {
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+.Overall {
+  height: 25%;
+  display: flex;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .SkillBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-}
-
-.SkillName {
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: 2.5rem;
   padding: 1rem;
 }
 
-.SkillValue {
-  text-align: left;
+.SkillName {
   font-size: 1.2rem;
   line-height: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.SkillValue {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1370px) {
+  .Title {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .SkillName {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+    padding-bottom: 1rem;
+  }
+  .SkillBox {
+    height: 85%;
+  }
+
+  .SkillValue {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+    padding-bottom: 1rem;
+  }
+  .Overall {
+    height: 25%;
+
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
