@@ -143,3 +143,12 @@
     align-items: center;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .SkillContainer {
+    display: none;
+  }
+  .Title {
+    font-size: 0.8rem;
+  }
+}

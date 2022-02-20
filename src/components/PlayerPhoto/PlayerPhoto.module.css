@@ -14,8 +14,8 @@
 }
 
 .PlayerPhoto:visited {
-  opacity: 0.6; /* Real browsers */
-  filter: alpha(opacity = 60); /* MSIE */
+  opacity: 0.6;
+  filter: alpha(opacity = 60);
 }
 
 .PlayerName {
@@ -26,11 +26,17 @@
 
 .Fade {
   filter: grayscale(100%);
-  border: 10px solid black;
+  border: 5px solid white;
 }
 
 @media only screen and (max-width: 1370px) {
   .PlayerPhoto {
     height: 10.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .PlayerPhoto {
+    height: 9rem;
   }
 }

@@ -3,8 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 35vh;
-  width: 35vw;
+  height: 40vh;
+  width: 40vw;
   background: #555;
 }
 
@@ -74,11 +74,59 @@
   cursor: pointer;
 }
 
-.BlinkAnimation {
-  animation: blink-animation 1s steps(2, start) infinite;
+@media only screen and (max-width: 1370px) {
+  .ModalWindow {
+    height: 55vh;
+    width: 45vw;
+  }
 }
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
+
+@media only screen and (max-width: 450px) {
+  .ModalWindow {
+    height: 45vh;
+    width: 70vw;
+  }
+
+  .Top {
+    height: 15%;
+  }
+
+  .Title {
+    font-size: 1.3rem;
+  }
+
+  .Body {
+    height: 85%;
+  }
+
+  .Content {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    padding: 3rem;
+  }
+
+  .Options {
+    font-size: 1.2rem;
+  }
+
+  .Select {
+    display: flex;
+    width: 100%;
+  }
+
+  .BackNext {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .Label {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
   }
 }

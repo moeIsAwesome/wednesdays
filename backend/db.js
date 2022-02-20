@@ -26,6 +26,7 @@ const playerSchema = new mongoose.Schema({
   Pass: { type: Number },
   Dribble: { type: Number },
   Speed: { type: Number },
+  lineupImg: { type: String },
 });
 
 // NOTE Create a collection:
@@ -36,11 +37,14 @@ const Player = mongoose.model('players', playerSchema);
 
 // Player.create({
 //   name: 'Moe',
+//   img: 'https://lh3.google.com/u/2/d/10TBd4k3IiTvYvBV8n3MWor2cBZFAZuoz=w1920-h937-iv1',
 //   Defence: 6,
 //   Shoot: 8,
 //   Pass: 9,
 //   Dribble: 8,
 //   Speed: 9,
+//   lineupImg:
+//     'https://lh3.google.com/u/2/d/13H4A8gP1vWr04AZAoLXZSSAhQ6V-tdSz=w1920-h937-iv1',
 // });
 
 module.exports = Player;
