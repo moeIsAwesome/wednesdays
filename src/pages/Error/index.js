@@ -6,7 +6,7 @@ export default function Error() {
   const Navigate = useNavigate();
   return (
     <div className={styles.App}>
-      <h1>ERRPR!</h1>
+      <h1>ERROR!</h1>
       <Button
         text="Back"
         functionalityOnClick={() => {
