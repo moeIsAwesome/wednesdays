@@ -143,7 +143,7 @@
     width: 100%;
   }
 }
-/* 
+
 @media only screen and (max-width: 450px) {
   .Header {
     height: 10vh;
@@ -186,4 +186,4 @@
   .PickedPlayerBottom {
     width: 100%;
   }
-} */
+}
