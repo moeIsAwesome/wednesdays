@@ -1,29 +1,37 @@
+/* ANCHOR -----------------HEADER---------------------------- */
+
 .Header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 12vh;
   width: 100%;
+  overflow: hidden;
+
   border-bottom: 7px solid #eee;
 }
+.Title {
+  margin: auto;
+}
+
 .SoundLogo {
   width: 80px;
   cursor: pointer;
 }
 
-/* ANCHOR --------------------------------------------- */
+/* ANCHOR -----------------SELECTPLAYERS---------------------------- */
 
 .SectionSelectPlayers {
   display: flex;
-  height: 45vh;
-  width: 100vw;
+  height: 48vh;
+  max-width: 100vw;
   overflow: hidden;
   border-bottom: 7px solid #eee;
 }
 .SelectPlayersArea {
   width: 80vw;
   height: 100%;
-  margin-right: 10%;
+  margin: 0 7% 0 7%;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -40,17 +48,18 @@
 
 .PlayersContainer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   justify-items: center;
-  width: 70%;
+  width: 100%;
   height: 100%;
   overflow-y: scroll;
 }
-/* ANCHOR --------------------------------------------- */
+/* ANCHOR ----------------PICKEDPLAYERS----------------------------- */
 
 .SectionPickedPlayers {
   display: flex;
-  height: 43vh;
+  min-height: 38vh;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -63,30 +72,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .PickedPlayerTop {
   height: 10%;
   width: 100%;
-  text-align: center;
-}
-.NumberOfPlayers {
-  font-size: 1.4rem;
-}
-
-.PickedPlayerBody {
-  height: 70%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.NumberOfPlayers {
+  font-size: 1.5rem;
+  padding: 2rem 0 2rem 0;
+}
+
+.PickedPlayerBody {
+  width: 100%;
+  max-width: 70%;
+  padding-bottom: 1rem;
   overflow: hidden;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .PickedPlayerBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20%;
   width: 100%;
-  text-align: center;
 }
 
 .PickedPlayerName {
@@ -94,8 +111,35 @@
 }
 
 @media only screen and (max-width: 1370px) {
+  .Header {
+    height: 8.5vh;
+    width: 100%;
+  }
+  .Title {
+    font-size: 1.4rem;
+  }
+  .SoundLogo {
+    width: 6rem;
+  }
   .PlayersContainer {
     grid-template-columns: repeat(6, 1fr);
-    width: 80%;
+    width: 100%;
+  }
+  .PickedPlayerTop {
+    width: 100%;
+    height: 5%;
+  }
+  .NumberOfPlayers {
+    padding: 1rem 0 0 0;
+    font-size: 1.3rem;
+  }
+
+  .PickedPlayerBody {
+    width: 100%;
+    max-width: 60%;
+    padding-bottom: 1rem;
+  }
+  .PickedPlayerBottom {
+    width: 100%;
   }
 }

@@ -5,3 +5,10 @@
   font-family: inherit;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1370px) {
+  .Button {
+    height: 3rem;
+    width: 10rem;
+  }
+}

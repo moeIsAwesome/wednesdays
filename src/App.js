@@ -3,8 +3,7 @@ import styles from './components/PickedPlayer/PickedPlayer.module.css';
 import { useEffect, useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
 import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
-import soundOn from './images/icon/Sound On.png';
-import soundOff from './images/icon/Sound Off.png';
+
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
@@ -24,6 +23,8 @@ function App() {
     setMusicIsPlaying,
     play,
     pause,
+    soundOn,
+    soundOff,
   } = useGlobalContext();
 
   async function getPlayers() {
@@ -152,19 +153,19 @@ function App() {
               })
             )}
           </div>
-        </div>
-        <div className="PickedPlayerBottom">
-          <Button
-            text="Submit"
-            functionalityOnClick={(e) => {
-              e.preventDefault();
-              if (selectedPlayers.length < 2) {
-                alert('We need at least two players');
-              } else {
-                setShowTeamsModal(true);
-              }
-            }}
-          />
+          <div className="PickedPlayerBottom">
+            <Button
+              text="Submit"
+              functionalityOnClick={(e) => {
+                e.preventDefault();
+                if (selectedPlayers.length < 2) {
+                  alert('We need at least two players');
+                } else {
+                  setShowTeamsModal(true);
+                }
+              }}
+            />
+          </div>
         </div>
       </section>
       {showTeamsModal && (

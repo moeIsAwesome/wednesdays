@@ -17,16 +17,6 @@ body {
   background-color: #222;
 }
 
-
-
-.Title {
-  margin: auto;
-}
-
-
-
-
-
 /* ANCHOR Creating Customized Radio Button */
 label input {
   opacity: 0;

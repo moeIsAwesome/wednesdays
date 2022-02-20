@@ -8,9 +8,14 @@
   flex-direction: column;
 }
 
+.SectionTeams {
+  overflow: hidden;
+  height: 88vh;
+  width: 100vw;
+}
 .TeamsContainer {
-  width: 80vw;
-  height: 75vh;
+  width: 100%;
+  height: 100%;
   background: #000;
   display: flex;
   flex-direction: column;
@@ -19,29 +24,41 @@
 }
 
 .Team {
-  width: 80%;
-  height: 50%;
+  width: 90%;
+  height: 45%;
   background: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border-style: dotted;
+}
+
+.TeamTop {
+  height: 10%;
+}
+.Title {
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+.TeamBody {
+  height: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 1rem;
 }
 
-.Title {
-  font-size: 1.5rem;
-}
-
-.Body {
+.Players {
+  width: 80%;
   display: flex;
-}
-
-.BtnContainer {
-  margin: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .SkillBox {
+  border-style: double;
   display: flex;
   justify-content: center;
   align-items: center;

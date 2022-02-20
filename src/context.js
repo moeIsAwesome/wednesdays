@@ -1,6 +1,8 @@
 import React from 'react';
 import { useContext, useState } from 'react';
 import useSound from 'use-sound';
+import soundOn from './images/icon/Sound On.png';
+import soundOff from './images/icon/Sound Off.png';
 import showMusGoOn from './sound/Show.mp3';
 
 const AppContext = React.createContext();
@@ -21,6 +23,8 @@ export const AppProvider = ({ children }) => {
         setMusicIsPlaying,
         play,
         pause,
+        soundOff,
+        soundOn,
       }}
     >
       {children}

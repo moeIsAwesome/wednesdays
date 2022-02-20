@@ -1,6 +1,6 @@
 .PlayerCard {
   width: 13vw;
-  height: 45vh;
+  height: 42vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +56,7 @@
 
 @media only screen and (max-width: 1370px) {
   .PlayerCard {
-    width: 15vw;
+    width: 14vw;
   }
 
   .PlayerPhoto {

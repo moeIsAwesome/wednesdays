@@ -11,9 +11,21 @@
   padding-top: 2rem;
   height: 22rem;
   width: auto;
+  margin: 0 -2.5rem 0 -2.5rem;
 }
 
 .Name {
   padding: 1.1rem;
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1370px) {
+  .Photo {
+    padding-top: 0.9rem;
+    height: 17rem;
+  }
+  .Name {
+    padding: 0.7rem;
+    font-size: 1.1rem;
+  }
 }
