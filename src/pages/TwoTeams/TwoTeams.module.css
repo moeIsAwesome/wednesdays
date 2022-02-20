@@ -1,7 +1,7 @@
 .App {
   height: 100vh;
   width: 100vw;
-  background-color: #555;
+  background-color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,23 +57,69 @@
   align-items: center;
 }
 
-.SkillBox {
+.SkillContainer {
   border-style: double;
+  display: flex;
+  height: 85%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.SkillBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
 }
 
 .SkillName {
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: 2.5rem;
+  font-size: 1.4rem;
+  line-height: 3rem;
   padding: 1rem;
 }
 
 .SkillValue {
-  text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+.Overall {
+  display: flex;
   line-height: 2.5rem;
+  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1370px) {
+  .Team {
+    margin: 0.3rem;
+  }
+
+  .SkillBox {
+    height: 85%;
+  }
+  .SkillName {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding: 1rem;
+  }
+
+  .SkillValue {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding: 1rem;
+  }
+
+  .Overall {
+    display: flex;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
