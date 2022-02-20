@@ -74,6 +74,15 @@
   cursor: pointer;
 }
 
+.BlinkAnimation {
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
 @media only screen and (max-width: 1370px) {
   .ModalWindow {
     height: 55vh;
