@@ -1,4 +1,5 @@
 import './App.css';
+import * as Realm from 'realm-web';
 import styles from './components/PickedPlayer/PickedPlayer.module.css';
 import { useEffect, useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
@@ -27,17 +28,32 @@ function App() {
     soundOff,
   } = useGlobalContext();
 
-  async function getPlayers() {
+  // async function getPlayers() {
+  //   try {
+  //     const receivedData = await fetch(url);
+  //     const body = await receivedData.json();
+  //     setAllPlayers(body.result);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  async function getAllPlayersRealm() {
+    const app = new Realm.App({ id: 'wednesdays-ycplb' });
+    const credentials = Realm.Credentials.anonymous();
     try {
-      const receivedData = await fetch(url);
-      const body = await receivedData.json();
-      setAllPlayers(body.result);
+      const user = await app.logIn(credentials);
+      const allPlayers = await user.functions.getAllPlayers();
+      setAllPlayers(allPlayers);
+
+      console.log(allPlayers);
     } catch (error) {
       console.log(error);
     }
   }
   useEffect(() => {
-    getPlayers();
+    // getPlayers();
+    getAllPlayersRealm();
   }, []);
 
   const addToPlayersListAndRemoveFromPlayersList = (
