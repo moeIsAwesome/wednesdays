@@ -150,7 +150,7 @@
     width: 100%;
   }
 }
-/* 
+
 @media only screen and (max-width: 500px) {
   .Header {
     height: 10vh;
@@ -220,4 +220,4 @@
     width: 100%;
     height: 20%;
   }
-} */
+}
