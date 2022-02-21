@@ -10,7 +10,7 @@ import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import { useGlobalContext } from './context';
-
+import Loading from '../src/images/loading.gif';
 function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
@@ -110,21 +110,25 @@ function App() {
           <PlayerCard selectedPlayers={selectedPlayers} />
         </div>
         <div className="SelectPlayersArea">
-          <div className="PlayersContainer">
-            {allPlayers.map((player) => {
-              return (
-                <PlayerPhoto
-                  key={player._id}
-                  {...player}
-                  selectedPlayers={selectedPlayers}
-                  setSelectedPlayers={setSelectedPlayers}
-                  addToPlayersListAndRemoveFromPlayersList={
-                    addToPlayersListAndRemoveFromPlayersList
-                  }
-                />
-              );
-            })}
-          </div>
+          {allPlayers.length === 0 ? (
+            <img className="Loading" src={Loading} alt="Loading..." />
+          ) : (
+            <div className="PlayersContainer">
+              {allPlayers.map((player) => {
+                return (
+                  <PlayerPhoto
+                    key={player._id}
+                    {...player}
+                    selectedPlayers={selectedPlayers}
+                    setSelectedPlayers={setSelectedPlayers}
+                    addToPlayersListAndRemoveFromPlayersList={
+                      addToPlayersListAndRemoveFromPlayersList
+                    }
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 

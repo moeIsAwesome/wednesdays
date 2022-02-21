@@ -54,6 +54,11 @@
   height: 100%;
   overflow-y: scroll;
 }
+
+.Loading {
+  width: 100%;
+  height: 100%;
+}
 /* ANCHOR ----------------PICKEDPLAYERS----------------------------- */
 
 .SectionPickedPlayers {
