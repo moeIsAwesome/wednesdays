@@ -10,8 +10,8 @@ Every single Wednesday, my friends and I used to spend an awful lot of time argu
 Your team gonna blow away ours! My team is crap! This is not fair...blah blah blah...
 I solved the problem by developing this app. Just give it the players' name, and it divides the teams as fairly as possible!
 
-**How to use:**
-Everything is obvious!
+**NOTE**
+This is my personal project which we use every week. The retro UI design indicates our long friendship.
 
 https://moeisawesome.github.io/wednesdays/
 
