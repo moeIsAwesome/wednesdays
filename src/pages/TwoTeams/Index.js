@@ -281,9 +281,17 @@ export default function TwoTeams() {
                       <strong>Overall:</strong>
                     </p>
                     <p>
-                      <strong>
-                        {randomFlag
-                          ? `${'█'.repeat(
+                      {randomFlag
+                        ? `${'█'.repeat(
+                            Math.ceil(
+                              twoTeamsRandom.Team1.reduce(
+                                (previousValue, currrentValue) =>
+                                  currrentValue.Overall + previousValue,
+                                0
+                              ) / twoTeamsRandom.Team1.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 twoTeamsRandom.Team1.reduce(
                                   (previousValue, currrentValue) =>
@@ -291,23 +299,23 @@ export default function TwoTeams() {
                                   0
                                 ) / twoTeamsRandom.Team1.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  twoTeamsRandom.Team1.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / twoTeamsRandom.Team1.length
-                                )
-                            )} ${Math.ceil(
-                              twoTeamsRandom.Team1.reduce(
+                          )} ${Math.ceil(
+                            twoTeamsRandom.Team1.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / twoTeamsRandom.Team1.length
+                          )}`
+                        : `${'█'.repeat(
+                            Math.ceil(
+                              twoTeamsFair.Team1.reduce(
                                 (previousValue, currrentValue) =>
                                   currrentValue.Overall + previousValue,
                                 0
-                              ) / twoTeamsRandom.Team1.length
-                            )}`
-                          : `${'█'.repeat(
+                              ) / twoTeamsFair.Team1.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 twoTeamsFair.Team1.reduce(
                                   (previousValue, currrentValue) =>
@@ -315,23 +323,13 @@ export default function TwoTeams() {
                                   0
                                 ) / twoTeamsFair.Team1.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  twoTeamsFair.Team1.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / twoTeamsFair.Team1.length
-                                )
-                            )} ${Math.ceil(
-                              twoTeamsFair.Team1.reduce(
-                                (previousValue, currrentValue) =>
-                                  currrentValue.Overall + previousValue,
-                                0
-                              ) / twoTeamsFair.Team1.length
-                            )} `}
-                      </strong>
+                          )} ${Math.ceil(
+                            twoTeamsFair.Team1.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / twoTeamsFair.Team1.length
+                          )} `}
                     </p>
                   </div>
                 </div>
@@ -578,9 +576,17 @@ export default function TwoTeams() {
                       <strong>Overall:</strong>
                     </p>
                     <p>
-                      <strong>
-                        {randomFlag
-                          ? `${'█'.repeat(
+                      {randomFlag
+                        ? `${'█'.repeat(
+                            Math.ceil(
+                              twoTeamsRandom.Team2.reduce(
+                                (previousValue, currrentValue) =>
+                                  currrentValue.Overall + previousValue,
+                                0
+                              ) / twoTeamsRandom.Team2.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 twoTeamsRandom.Team2.reduce(
                                   (previousValue, currrentValue) =>
@@ -588,23 +594,23 @@ export default function TwoTeams() {
                                   0
                                 ) / twoTeamsRandom.Team2.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  twoTeamsRandom.Team2.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / twoTeamsRandom.Team2.length
-                                )
-                            )} ${Math.ceil(
-                              twoTeamsRandom.Team2.reduce(
+                          )} ${Math.ceil(
+                            twoTeamsRandom.Team2.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / twoTeamsRandom.Team2.length
+                          )}`
+                        : `${'█'.repeat(
+                            Math.ceil(
+                              twoTeamsFair.Team2.reduce(
                                 (previousValue, currrentValue) =>
                                   currrentValue.Overall + previousValue,
                                 0
-                              ) / twoTeamsRandom.Team2.length
-                            )}`
-                          : `${'█'.repeat(
+                              ) / twoTeamsFair.Team2.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 twoTeamsFair.Team2.reduce(
                                   (previousValue, currrentValue) =>
@@ -612,23 +618,13 @@ export default function TwoTeams() {
                                   0
                                 ) / twoTeamsFair.Team2.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  twoTeamsFair.Team2.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / twoTeamsFair.Team2.length
-                                )
-                            )} ${Math.ceil(
-                              twoTeamsFair.Team2.reduce(
-                                (previousValue, currrentValue) =>
-                                  currrentValue.Overall + previousValue,
-                                0
-                              ) / twoTeamsFair.Team2.length
-                            )} `}
-                      </strong>
+                          )} ${Math.ceil(
+                            twoTeamsFair.Team2.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / twoTeamsFair.Team2.length
+                          )} `}
                     </p>
                   </div>
                 </div>

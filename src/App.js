@@ -10,8 +10,6 @@ import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import { useGlobalContext } from './context';
 
-const url = 'http://localhost:3050/api/v1/players';
-
 function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
@@ -28,15 +26,6 @@ function App() {
     soundOff,
   } = useGlobalContext();
 
-  // async function getPlayers() {
-  //   try {
-  //     const receivedData = await fetch(url);
-  //     const body = await receivedData.json();
-  //     setAllPlayers(body.result);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   async function getAllPlayersRealm() {
     const app = new Realm.App({ id: 'wednesdays-ycplb' });
@@ -52,7 +41,6 @@ function App() {
     }
   }
   useEffect(() => {
-    // getPlayers();
     getAllPlayersRealm();
   }, []);
 

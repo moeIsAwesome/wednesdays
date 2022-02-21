@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   height: 40vh;
   width: 40vw;
-  background: #555;
+  background: var(--clr-primary-light);
 }
 
 .DisplayNone {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
+  background-color: var(--clr-primary-dark);
 }
 
 .Title {
@@ -76,6 +76,7 @@
 
 .BlinkAnimation {
   animation: blink-animation 1s steps(2, start) infinite;
+  color: var(--clr-accent);
 }
 @keyframes blink-animation {
   to {

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+:root {
+  --clr-primary-light: #4e4f4e;
+  --clr-primary: #2c2c2c;
+  --clr-primary-dark: #1b1b1b;
+  --clr-secondary: #ffffff;
+  --clr-secondary-dark: #cccccc;
+  --clr-secondary-darkest: #2b2b2b;
+  --clr-accent: #ff8800;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +23,8 @@ html {
 
 body {
   font-family: 'Press Start 2P', sans-serif;
-  color: #eee;
-  background-color: #222;
+  color: var(--clr-secondary);
+  background-color: var(--clr-primary);
 }
 
 /* ANCHOR Creating Customized Radio Button */

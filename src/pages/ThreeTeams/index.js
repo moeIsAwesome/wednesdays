@@ -280,9 +280,17 @@ export default function ThreeTeams() {
                       <strong>Overall:</strong>
                     </p>
                     <p>
-                      <strong>
-                        {randomFlag
-                          ? `${'█'.repeat(
+                      {randomFlag
+                        ? `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsRandom.Team1.reduce(
+                                (previousValue, currrentValue) =>
+                                  currrentValue.Overall + previousValue,
+                                0
+                              ) / threeTeamsRandom.Team1.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsRandom.Team1.reduce(
                                   (previousValue, currrentValue) =>
@@ -290,23 +298,23 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsRandom.Team1.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsRandom.Team1.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsRandom.Team1.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsRandom.Team1.reduce(
+                          )} ${Math.ceil(
+                            threeTeamsRandom.Team1.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsRandom.Team1.length
+                          )}`
+                        : `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsFair.Team1.reduce(
                                 (previousValue, currrentValue) =>
                                   currrentValue.Overall + previousValue,
                                 0
-                              ) / threeTeamsRandom.Team1.length
-                            )}`
-                          : `${'█'.repeat(
+                              ) / threeTeamsFair.Team1.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsFair.Team1.reduce(
                                   (previousValue, currrentValue) =>
@@ -314,23 +322,13 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsFair.Team1.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsFair.Team1.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsFair.Team1.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsFair.Team1.reduce(
-                                (previousValue, currrentValue) =>
-                                  currrentValue.Overall + previousValue,
-                                0
-                              ) / threeTeamsFair.Team1.length
-                            )} `}
-                      </strong>
+                          )} ${Math.ceil(
+                            threeTeamsFair.Team1.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsFair.Team1.length
+                          )} `}
                     </p>
                   </div>
                 </div>
@@ -576,9 +574,17 @@ export default function ThreeTeams() {
                       <strong>Overall:</strong>
                     </p>
                     <p>
-                      <strong>
-                        {randomFlag
-                          ? `${'█'.repeat(
+                      {randomFlag
+                        ? `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsRandom.Team2.reduce(
+                                (previousValue, currrentValue) =>
+                                  currrentValue.Overall + previousValue,
+                                0
+                              ) / threeTeamsRandom.Team2.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsRandom.Team2.reduce(
                                   (previousValue, currrentValue) =>
@@ -586,23 +592,23 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsRandom.Team2.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsRandom.Team2.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsRandom.Team2.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsRandom.Team2.reduce(
+                          )} ${Math.ceil(
+                            threeTeamsRandom.Team2.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsRandom.Team2.length
+                          )}`
+                        : `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsFair.Team2.reduce(
                                 (previousValue, currrentValue) =>
                                   currrentValue.Overall + previousValue,
                                 0
-                              ) / threeTeamsRandom.Team2.length
-                            )}`
-                          : `${'█'.repeat(
+                              ) / threeTeamsFair.Team2.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsFair.Team2.reduce(
                                   (previousValue, currrentValue) =>
@@ -610,23 +616,13 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsFair.Team2.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsFair.Team2.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsFair.Team2.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsFair.Team2.reduce(
-                                (previousValue, currrentValue) =>
-                                  currrentValue.Overall + previousValue,
-                                0
-                              ) / threeTeamsFair.Team2.length
-                            )} `}
-                      </strong>
+                          )} ${Math.ceil(
+                            threeTeamsFair.Team2.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsFair.Team2.length
+                          )} `}
                     </p>
                   </div>
                 </div>
@@ -872,9 +868,17 @@ export default function ThreeTeams() {
                       <strong>Overall:</strong>
                     </p>
                     <p>
-                      <strong>
-                        {randomFlag
-                          ? `${'█'.repeat(
+                      {randomFlag
+                        ? `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsRandom.Team3.reduce(
+                                (previousValue, currrentValue) =>
+                                  currrentValue.Overall + previousValue,
+                                0
+                              ) / threeTeamsRandom.Team3.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsRandom.Team3.reduce(
                                   (previousValue, currrentValue) =>
@@ -882,23 +886,23 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsRandom.Team3.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsRandom.Team3.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsRandom.Team3.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsRandom.Team3.reduce(
+                          )} ${Math.ceil(
+                            threeTeamsRandom.Team3.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsRandom.Team3.length
+                          )}`
+                        : `${'█'.repeat(
+                            Math.ceil(
+                              threeTeamsFair.Team3.reduce(
                                 (previousValue, currrentValue) =>
                                   currrentValue.Overall + previousValue,
                                 0
-                              ) / threeTeamsRandom.Team3.length
-                            )}`
-                          : `${'█'.repeat(
+                              ) / threeTeamsFair.Team3.length
+                            )
+                          )}${'▒'.repeat(
+                            10 -
                               Math.ceil(
                                 threeTeamsFair.Team3.reduce(
                                   (previousValue, currrentValue) =>
@@ -906,23 +910,13 @@ export default function ThreeTeams() {
                                   0
                                 ) / threeTeamsFair.Team3.length
                               )
-                            )}${'▒'.repeat(
-                              10 -
-                                Math.ceil(
-                                  threeTeamsFair.Team3.reduce(
-                                    (previousValue, currrentValue) =>
-                                      currrentValue.Overall + previousValue,
-                                    0
-                                  ) / threeTeamsFair.Team3.length
-                                )
-                            )} ${Math.ceil(
-                              threeTeamsFair.Team3.reduce(
-                                (previousValue, currrentValue) =>
-                                  currrentValue.Overall + previousValue,
-                                0
-                              ) / threeTeamsFair.Team3.length
-                            )} `}
-                      </strong>
+                          )} ${Math.ceil(
+                            threeTeamsFair.Team3.reduce(
+                              (previousValue, currrentValue) =>
+                                currrentValue.Overall + previousValue,
+                              0
+                            ) / threeTeamsFair.Team3.length
+                          )} `}
                     </p>
                   </div>
                 </div>
