@@ -4,12 +4,14 @@
 
 ## Wednesday is a good to to start something new!
 
-### Provides you with the ability to pick the most ...content
+### You tell me the name of players, and I'll generate the most equal teams you can imagine.
+
+Every single Wednesday, my friends and I used to spend an awful lot of time arguing.
+Your team gonna blow away ours! My team is crap! This is not fair...blah blah blah...
+I solved the problem by developing this app. Just give it the players' name, and it divides the teams as fairly as possible!
 
 **How to use:**
-
-Enter the Hex color code you want. Next, enter a number from 1 to 100. The lower the number, the more colors you will receive.
-Enjoy!
+Everything is obvious!
 
 https://moeisawesome.github.io/wednesdays/
 
