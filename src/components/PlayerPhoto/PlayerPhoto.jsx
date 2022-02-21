@@ -19,17 +19,17 @@ export default function PlayerPhoto({
       className={selected ? styles.PlayerBox : styles.Fade}
       onClick={() => {
         setSelected(!selected);
-        // addToPlayersListAndRemoveFromPlayersList(
-        //   _id,
-        //   name,
-        //   img,
-        //   lineupImg,
-        //   Defence,
-        //   Shoot,
-        //   Pass,
-        //   Dribble,
-        //   Speed
-        // );
+        addToPlayersListAndRemoveFromPlayersList(
+          _id,
+          name,
+          img,
+          lineupImg,
+          Defence,
+          Shoot,
+          Pass,
+          Dribble,
+          Speed
+        );
       }}
     >
       <img src={img} alt={name} className={styles.PlayerPhoto} />

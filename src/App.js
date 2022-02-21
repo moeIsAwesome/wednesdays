@@ -59,6 +59,7 @@ function App() {
     if (selectedPlayers.some((item) => item._id === _id)) {
       setSelectedPlayers(selectedPlayers.filter((el) => el._id !== _id));
     } else {
+      // Cause BUG on IOS!!
       setSelectedPlayers([
         ...selectedPlayers,
         {
@@ -119,8 +120,6 @@ function App() {
                   <PlayerPhoto
                     key={player._id}
                     {...player}
-                    selectedPlayers={selectedPlayers}
-                    setSelectedPlayers={setSelectedPlayers}
                     addToPlayersListAndRemoveFromPlayersList={
                       addToPlayersListAndRemoveFromPlayersList
                     }
@@ -156,7 +155,6 @@ function App() {
                     key={index}
                     lineupName={player.name}
                     lineupPhoto={player.lineupImg}
-                    selectedPlayers={selectedPlayers}
                   />
                 );
               })
