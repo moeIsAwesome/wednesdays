@@ -43,7 +43,15 @@ export default function TwoTeams() {
             <article className={styles.Team}>
               <div className={styles.TeamTop}>
                 <div className={styles.Title}>
-                  <h2>Team 1</h2>
+                  <h3>
+                    We have two
+                    {randomFlag ? (
+                      <strong> RANDOM </strong>
+                    ) : (
+                      <strong> FAIR </strong>
+                    )}
+                    Teams
+                  </h3>
                 </div>
               </div>
               <div className={styles.TeamBody}>
@@ -336,11 +344,7 @@ export default function TwoTeams() {
               </div>
             </article>
             <article className={styles.Team}>
-              <div className={styles.TeamTop}>
-                <div className={styles.Title}>
-                  <h2>Team 2</h2>
-                </div>
-              </div>
+              <div className={styles.TeamTop}></div>
               <div className={styles.TeamBody}>
                 <div className={styles.Players}>
                   {randomFlag

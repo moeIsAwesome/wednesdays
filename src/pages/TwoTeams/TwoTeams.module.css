@@ -38,8 +38,8 @@
   height: 10%;
 }
 .Title {
-  padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .TeamBody {
   height: 90%;
@@ -59,7 +59,7 @@
 .SkillContainer {
   border-style: double;
   display: flex;
-  height: 85%;
+  height: 75%;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -130,11 +130,50 @@ strong {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
+  .Team {
+    width: 90%;
+  }
+
   .SkillContainer {
-    display: none;
   }
   .Title {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .TeamBody {
+    flex-direction: column;
+  }
+
+  .SkillContainer {
+    height: 75%;
+
+    padding: 0 0 0.5rem 0;
+    margin: 0;
+  }
+
+  .SkillBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -0.5rem;
+  }
+
+  .SkillName {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .SkillValue {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+  }
+  .Overall {
+    display: flex;
+    line-height: 1.3rem;
     font-size: 1rem;
   }
 }

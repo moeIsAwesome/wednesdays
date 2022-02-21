@@ -79,8 +79,24 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   .PlayerCard {
+    width: 35vw;
+    height: 22vh;
+  }
+  .PlayerPhoto {
+    width: 17vw;
+    margin-bottom: 0.1rem;
+  }
+  .PlayerName {
     display: none;
+  }
+  .SkillName {
+    font-size: 0.7rem;
+    line-height: 1.1rem;
+  }
+  .SkillValue {
+    font-size: 0.7rem;
+    line-height: 1.1rem;
   }
 }

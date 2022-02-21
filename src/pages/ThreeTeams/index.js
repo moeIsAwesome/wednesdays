@@ -43,7 +43,15 @@ export default function ThreeTeams() {
             <article className={styles.Team}>
               <div className={styles.TeamTop}>
                 <div className={styles.Title}>
-                  <h2>Team 1</h2>
+                  <h3>
+                    We have three
+                    {randomFlag ? (
+                      <strong> RANDOM </strong>
+                    ) : (
+                      <strong> FAIR </strong>
+                    )}
+                    Teams
+                  </h3>
                 </div>
               </div>
               <div className={styles.TeamBody}>
@@ -335,11 +343,7 @@ export default function ThreeTeams() {
               </div>
             </article>
             <article className={styles.Team}>
-              <div className={styles.TeamTop}>
-                <div className={styles.Title}>
-                  <h2>Team 2</h2>
-                </div>
-              </div>
+              <div className={styles.TeamTop}></div>
               <div className={styles.TeamBody}>
                 <div className={styles.Players}>
                   {threeTeamsRandom.Team2.length > 0
@@ -629,11 +633,7 @@ export default function ThreeTeams() {
               </div>
             </article>
             <article className={styles.Team}>
-              <div className={styles.TeamTop}>
-                <div className={styles.Title}>
-                  <h2>Team 3</h2>
-                </div>
-              </div>
+              <div className={styles.TeamTop}></div>
               <div className={styles.TeamBody}>
                 <div className={styles.Players}>
                   {threeTeamsRandom.Team3.length > 0

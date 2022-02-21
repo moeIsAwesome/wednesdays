@@ -91,16 +91,14 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   .ModalWindow {
-    height: 45vh;
-    width: 70vw;
+    height: 35vh;
+    width: 80vw;
   }
-
   .Top {
     height: 15%;
   }
-
   .Title {
     font-size: 1.3rem;
   }

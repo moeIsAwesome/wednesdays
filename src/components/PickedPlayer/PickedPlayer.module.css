@@ -15,7 +15,7 @@
 }
 
 .Name {
-  padding: 1.1rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
 }
 
@@ -29,13 +29,13 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   .Photo {
-    padding-top: 0.9rem;
-    height: 12vh;
+    padding-top: 0.1rem;
+    height: 15vh;
   }
   .Name {
-    padding: 0.7rem;
+    padding: 0.9rem;
     font-size: 1rem;
   }
 }

@@ -38,11 +38,11 @@
 }
 
 .Title {
-  padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .TeamBody {
-  height: 90%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -59,7 +59,7 @@
 .SkillContainer {
   border-style: double;
   display: flex;
-  height: 95%;
+  height: 80%;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -119,39 +119,87 @@ strong {
 
 @media only screen and (max-width: 1370px) {
   .Title {
-    padding: 1rem;
+    padding: 0.1rem;
     font-size: 1rem;
   }
   .SkillName {
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-    padding-bottom: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.7rem;
+    padding-bottom: 1.1rem;
   }
   .SkillBox {
-    height: 85%;
+    height: 90%;
   }
 
   .SkillValue {
     font-size: 0.9rem;
-    line-height: 1.8rem;
-    padding-bottom: 1rem;
+    line-height: 1.7rem;
+    padding-bottom: 1.1rem;
   }
   .Overall {
-    height: 25%;
-
-    line-height: 1.5rem;
-    font-size: 1.1rem;
+    height: 30%;
+    line-height: 1.3rem;
+    font-size: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .SkillContainer {
-    display: none;
+@media only screen and (max-width: 500px) {
+  .App {
+    height: auto;
+    width: 100vw;
   }
   .Title {
+    font-size: 0.8rem;
+  }
+  .TeamsContainer {
+    width: 100%;
+    height: auto;
+  }
+  .SectionTeams {
+    overflow: hidden;
+    height: auto;
+    width: 100vw;
+  }
+  .Team {
+    width: 90%;
+    height: auto;
+  }
+  .TeamBody {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .Players {
+    width: 80%;
+    height: auto;
+  }
+  .SkillContainer {
+    width: 45%;
+    padding: 0rem;
+    margin: 0.7rem;
+  }
+
+  .SkillBox {
+    height: 75%;
+    padding: 0.1rem;
+  }
+
+  .SkillName {
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .SkillValue {
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    padding: 0 1rem 0 0;
+  }
+  .Overall {
+    line-height: 1.5rem;
     font-size: 0.8rem;
   }
 }

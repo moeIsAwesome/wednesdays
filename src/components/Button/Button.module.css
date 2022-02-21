@@ -12,3 +12,11 @@
     width: 10rem;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .Button {
+    height: 2.5rem;
+    width: 7rem;
+    font-size: 1rem;
+  }
+}

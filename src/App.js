@@ -4,6 +4,7 @@ import styles from './components/PickedPlayer/PickedPlayer.module.css';
 import { useEffect, useState } from 'react';
 import PlayerCard from './components/PlayerCard/PlayerCard';
 import PlayerPhoto from './components/PlayerPhoto/PlayerPhoto';
+import { useNavigate } from 'react-router-dom';
 
 import PickedPlayer from './components/PickedPlayer/PickedPlayer';
 import Button from './components/Button/Button';
@@ -14,6 +15,7 @@ function App() {
   const [allPlayers, setAllPlayers] = useState([]);
   const [showTeamsModal, setShowTeamsModal] = useState(false);
   const [showLineupModal, setShowLineupModal] = useState(false);
+  let navigate = useNavigate();
 
   const {
     selectedPlayers,
@@ -25,7 +27,6 @@ function App() {
     soundOn,
     soundOff,
   } = useGlobalContext();
-
 
   async function getAllPlayersRealm() {
     const app = new Realm.App({ id: 'wednesdays-ycplb' });
@@ -163,7 +164,7 @@ function App() {
               functionalityOnClick={(e) => {
                 e.preventDefault();
                 if (selectedPlayers.length < 2) {
-                  alert('We need at least two players');
+                  navigate('error', { replace: true });
                 } else {
                   setShowTeamsModal(true);
                 }
