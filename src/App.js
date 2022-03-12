@@ -29,7 +29,7 @@ function App() {
   } = useGlobalContext();
 
   async function getAllPlayersRealm() {
-    const app = new Realm.App({ id: 'wednesdays-ycplb' });
+    const app = new Realm.App({ id: process.env.REACT_APP_DBID });
     const credentials = Realm.Credentials.anonymous();
     try {
       const user = await app.logIn(credentials);
