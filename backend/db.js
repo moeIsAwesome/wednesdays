@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // // NOTE Connecting to Database
-const url = process.env.DBSTR;
+const url = process.env.REACT_APP_DBSTR;
 
 mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
