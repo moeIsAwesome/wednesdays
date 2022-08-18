@@ -6,9 +6,22 @@
 
 ### You tell me the name of players, and I'll generate the most equal teams you can imagine.
 
-Every single Wednesday, my friends and I used to spend an awful lot of time arguing.
-Your team gonna blow away ours! My team is crap! This is not fair...blah blah blah...
-I solved the problem by developing this app. Just give it the players' name, and it divides the teams as fairly as possible!
+Your team is gonna blow us away.
+Come on, it's ridiculous.
+Ok, we're done. I won't play anymore.
+Every Wednesday before the match, we used to waste an awful lot of time arguing.
+It was impossible for us to accept each other's word, and I suppose this is the same for you.
+There are always great players and, conversely, awful players with whom no one likes to be in the same team. It was really hard to form equal Teams. There was always one team that was way better than the others.
+We no longer have this problem though.
+Ever since I can remember, the way I have solved problems has always been a combination of creativity and knowledge.
+Even during my IELTS exam preparation, I had my own particular app.
+So I decided to develop an app to get rid of this nerve-wracking problem.
+A player's skills were evaluated based on their shooting speed, defence technique, etc. Based on these values, teams would be divided. My app would form two or three equal teams.
+I found it very interesting how we watched its effect in our game once we began using it. The teams would fight and struggle to win.
+I developed it years ago using JS; I started from scratch and redesigned it with much cleaner code and better algorithms.
+It is a personal project that I am sharing with you; the source code is also available.
+This is a Desktop-first design, so if you want to test it, preferably use a PC and laptop. Despite its responsiveness on tablets and mobile devices, you may not have a pleasant experience using a mobile device, especially if you have an iPhone.
+As we have been playing football for almost 20 years, the retro design of the UI is a symbol of our friendship.
 
 **NOTE**
 It is a desktop-first project and you may have a bad user experience if you use your phone, even though it is responsive for mobile phones and tablets.
