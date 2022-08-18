@@ -11,7 +11,7 @@ Your team gonna blow away ours! My team is crap! This is not fair...blah blah bl
 I solved the problem by developing this app. Just give it the players' name, and it divides the teams as fairly as possible!
 
 **NOTE**
-It is a desktop-first project and you may have a bad user experience if you use your phone, even though it is a responsive site for mobile phones and tablets.
+It is a desktop-first project and you may have a bad user experience if you use your phone, even though it is responsive for mobile phones and tablets.
 This is my personal project that my friends and I use almost every week. The retro UI design indicates our long friendship.
 
 https://moeisawesome.github.io/wednesdays/
